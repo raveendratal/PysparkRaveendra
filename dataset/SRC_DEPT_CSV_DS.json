@@ -20,12 +20,15 @@
 		},
 		"schema": [
 			{
+				"name": "Deptno",
 				"type": "String"
 			},
 			{
+				"name": "Dname",
 				"type": "String"
 			},
 			{
+				"name": "Loc",
 				"type": "String"
 			}
 		]

@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "Sort_With_surrogate_key",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {

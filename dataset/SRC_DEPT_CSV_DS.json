@@ -1,0 +1,36 @@
+{
+	"name": "SRC_DEPT_CSV_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_GEN1_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "dept.csv",
+				"folderPath": "source"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Deptno",
+				"type": "String"
+			},
+			{
+				"name": "Dname",
+				"type": "String"
+			},
+			{
+				"name": "Loc",
+				"type": "String"
+			}
+		]
+	}
+}

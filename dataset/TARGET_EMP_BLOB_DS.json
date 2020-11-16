@@ -1,0 +1,22 @@
+{
+	"name": "TARGET_EMP_BLOB_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BLOB_STORAGE_GEN2_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "target",
+				"container": "pysparkcontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

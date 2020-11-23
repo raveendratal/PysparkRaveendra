@@ -1,5 +1,5 @@
 {
-	"name": "RestService1",
+	"name": "REST_API_LS",
 	"properties": {
 		"annotations": [],
 		"type": "RestService",

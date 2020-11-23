@@ -1,0 +1,154 @@
+value
+<?xml version=1.0 encoding=UTF-8?>
+<root>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>20</DEPTNO>
+      <EMPNO>7369</EMPNO>
+      <ENAME>SMITH</ENAME>
+      <HIREDATE>17-12-80</HIREDATE>
+      <JOB>CLERK</JOB>
+      <MGR>7902</MGR>
+      <SAL>800</SAL>
+   </element>
+   <element>
+      <COMM>300</COMM>
+      <DEPTNO>30</DEPTNO>
+      <EMPNO>7499</EMPNO>
+      <ENAME>ALLEN</ENAME>
+      <HIREDATE>20-02-81</HIREDATE>
+      <JOB>SALESMAN</JOB>
+      <MGR>7698</MGR>
+      <SAL>1600</SAL>
+   </element>
+   <element>
+      <COMM>500</COMM>
+      <DEPTNO>30</DEPTNO>
+      <EMPNO>7521</EMPNO>
+      <ENAME>WARD</ENAME>
+      <HIREDATE>22-02-81</HIREDATE>
+      <JOB>SALESMAN</JOB>
+      <MGR>7698</MGR>
+      <SAL>1250</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>20</DEPTNO>
+      <EMPNO>7566</EMPNO>
+      <ENAME>JONES</ENAME>
+      <HIREDATE>02-04-81</HIREDATE>
+      <JOB>MANAGER</JOB>
+      <MGR>7839</MGR>
+      <SAL>2975</SAL>
+   </element>
+   <element>
+      <COMM>1400</COMM>
+      <DEPTNO>30</DEPTNO>
+      <EMPNO>7654</EMPNO>
+      <ENAME>MARTIN</ENAME>
+      <HIREDATE>28-09-81</HIREDATE>
+      <JOB>SALESMAN</JOB>
+      <MGR>7698</MGR>
+      <SAL>1250</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>30</DEPTNO>
+      <EMPNO>7698</EMPNO>
+      <ENAME>SGR</ENAME>
+      <HIREDATE>01-05-81</HIREDATE>
+      <JOB>MANAGER</JOB>
+      <MGR>7839</MGR>
+      <SAL>2850</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>10</DEPTNO>
+      <EMPNO>7782</EMPNO>
+      <ENAME>RAVI</ENAME>
+      <HIREDATE>09-06-81</HIREDATE>
+      <JOB>MANAGER</JOB>
+      <MGR>7839</MGR>
+      <SAL>2450</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>20</DEPTNO>
+      <EMPNO>7788</EMPNO>
+      <ENAME>SCOTT</ENAME>
+      <HIREDATE>19-04-87</HIREDATE>
+      <JOB>ANALYST</JOB>
+      <MGR>7566</MGR>
+      <SAL>3000</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>10</DEPTNO>
+      <EMPNO>7839</EMPNO>
+      <ENAME>KING</ENAME>
+      <HIREDATE>17-11-81</HIREDATE>
+      <JOB>PRESIDENT</JOB>
+      <MGR null=true />
+      <SAL>5000</SAL>
+   </element>
+   <element>
+      <COMM>0</COMM>
+      <DEPTNO>30</DEPTNO>
+      <EMPNO>7844</EMPNO>
+      <ENAME>TURNER</ENAME>
+      <HIREDATE>08-09-81</HIREDATE>
+      <JOB>SALESMAN</JOB>
+      <MGR>7698</MGR>
+      <SAL>1500</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>20</DEPTNO>
+      <EMPNO>7876</EMPNO>
+      <ENAME>ADAMS</ENAME>
+      <HIREDATE>23-05-87</HIREDATE>
+      <JOB>CLERK</JOB>
+      <MGR>7788</MGR>
+      <SAL>1100</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>30</DEPTNO>
+      <EMPNO>7900</EMPNO>
+      <ENAME>JAMES</ENAME>
+      <HIREDATE>03-12-81</HIREDATE>
+      <JOB>CLERK</JOB>
+      <MGR>7698</MGR>
+      <SAL>950</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>20</DEPTNO>
+      <EMPNO>7902</EMPNO>
+      <ENAME>FORD</ENAME>
+      <HIREDATE>03-12-81</HIREDATE>
+      <JOB>ANALYST</JOB>
+      <MGR>7566</MGR>
+      <SAL>3000</SAL>
+   </element>
+   <element>
+      <COMM null="true" />
+      <DEPTNO>10</DEPTNO>
+      <EMPNO>7934</EMPNO>
+      <ENAME>MILLER</ENAME>
+      <HIREDATE>23-01-82</HIREDATE>
+      <JOB>CLERK</JOB>
+      <MGR>7782</MGR>
+      <SAL>1300</SAL>
+   </element>
+   <element>
+      <COMM>78</COMM>
+      <DEPTNO>80</DEPTNO>
+      <EMPNO>1234</EMPNO>
+      <ENAME>SEKHAR</ENAME>
+      <HIREDATE />
+      <JOB>doctor</JOB>
+      <MGR>7777</MGR>
+      <SAL>667</SAL>
+   </element>
+</root>

@@ -1,0 +1,12 @@
+{
+	"name": "RestService_GET_API_LS",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.data.gov.sg/v1/environment/24-hour-weather-forecast",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

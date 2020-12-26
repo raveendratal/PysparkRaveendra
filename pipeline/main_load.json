@@ -64,7 +64,7 @@
 										"type": "Expression"
 									},
 									"SourceStore_Directory": {
-										"value": "@item.directory",
+										"value": "@item().directory",
 										"type": "Expression"
 									},
 									"TargetStore_Location": {
@@ -72,7 +72,7 @@
 										"type": "Expression"
 									},
 									"TargetStore_Directory": {
-										"value": "@item.directory",
+										"value": "@item().directory",
 										"type": "Expression"
 									}
 								}

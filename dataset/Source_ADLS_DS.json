@@ -1,0 +1,32 @@
+{
+	"name": "Source_ADLS_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_GEN1_LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": {
+					"value": "@concat(dataset().Directory,'/',dataset().filename)",
+					"type": "Expression"
+				},
+				"folderPath": "staging"
+			}
+		}
+	}
+}

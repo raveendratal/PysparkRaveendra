@@ -1,0 +1,31 @@
+{
+	"name": "Target_BLOB_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BLOB_STORAGE_GEN2_LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": {
+					"value": "@concat(dataset().FolderPath)",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

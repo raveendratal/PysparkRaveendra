@@ -1,7 +1,7 @@
 {
-	"name": "main_load",
+	"name": "main_load_pipeline",
 	"properties": {
-		"description": "Hello from NDC Sydney!!!",
+		"description": "Main ETL Load and its getting metadata\nand calling each pipeline..",
 		"activities": [
 			{
 				"name": "Lookup1",

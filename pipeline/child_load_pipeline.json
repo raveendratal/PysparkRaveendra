@@ -1,5 +1,5 @@
 {
-	"name": "pipeline2",
+	"name": "child_load_pipeline",
 	"properties": {
 		"description": "Hello from NDC Sydney!!!",
 		"activities": [
@@ -91,7 +91,7 @@
 									},
 									"readrows": {
 										"value": {
-											"value": "@activity('Copy data1').output.rowsRead",
+											"value": "@activity('Copy data1').output.dataRead",
 											"type": "Expression"
 										},
 										"type": "String"
@@ -112,7 +112,7 @@
 									},
 									"writerows": {
 										"value": {
-											"value": "@activity('Copy data1').output.rowsCopied",
+											"value": "@activity('Copy data1').output.dataWritten",
 											"type": "Expression"
 										},
 										"type": "String"
@@ -161,15 +161,15 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FolderPath": {
-											"value": "@item().src_folderpath",
+											"value": "@pipeline().parameters.SourceStore_Location",
 											"type": "Expression"
 										},
 										"Directory": {
-											"value": "@item().directory",
+											"value": "@pipeline().parameters.SourceStore_Directory",
 											"type": "Expression"
 										},
 										"filename": {
-											"value": "@item().value",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
@@ -181,11 +181,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"FolderPath": {
-											"value": "@item().tgt_folderpath",
+											"value": "@pipeline().parameters.TargetStore_Location",
 											"type": "Expression"
 										},
 										"Directory": {
-											"value": "@item().directory",
+											"value": "@pipeline().parameters.TargetStore_Directory",
 											"type": "Expression"
 										},
 										"filename": {
@@ -256,7 +256,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@equals(item(),'File')",
+						"value": "@equals(item().type,'File')",
 						"type": "Expression"
 					}
 				}

@@ -82,26 +82,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"SourceStore_Location": {
-				"type": "string"
-			},
-			"SourceStore_Directory": {
-				"type": "string"
-			},
-			"TargetStore_Location": {
-				"type": "string"
-			},
-			"TargetStore_Directory": {
-				"type": "string"
-			},
-			"SourceFileneme": {
-				"type": "string"
-			},
-			"TargetFilename": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"

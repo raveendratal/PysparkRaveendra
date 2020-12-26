@@ -60,14 +60,108 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "Stored procedure1",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [
+					{
+						"activity": "Copy data1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": "[dbo].[PROC_ETL_LOAD_STATUS]",
+					"storedProcedureParameters": {
+						"activityname": {
+							"value": "",
+							"type": "String"
+						},
+						"activitystatus": {
+							"value": {
+								"value": "@activity('Copy data1').output.executionDetails[0].status",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"Createdon": {
+							"value": {
+								"value": "utcnow()",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"DataFactoryName": {
+							"value": {
+								"value": "@pipeline().DataFactory",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"endtime": {
+							"value": {
+								"value": "utcnow()",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"ErrorMessage": {
+							"value": "",
+							"type": "String"
+						},
+						"PipelineName": {
+							"value": {
+								"value": "@pipeline().Pipeline",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"readrows": {
+							"value": {
+								"value": "@activity('Copy data1').output.rowsRead",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"runid": {
+							"value": {
+								"value": "@pipeline().RunId",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"starttime": {
+							"value": {
+								"value": "@activity('Copy data1').output.executionDetails[0].start",
+								"type": "Expression"
+							},
+							"type": "DateTime"
+						},
+						"writerows": {
+							"value": {
+								"value": "@activity('Copy data1').output.rowsCopied",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "Metadata_SQLDB_LS",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
-		"variables": {
-			"infilefolder": {
-				"type": "String",
-				"defaultValue": "lnd"
-			}
-		},
 		"annotations": []
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"

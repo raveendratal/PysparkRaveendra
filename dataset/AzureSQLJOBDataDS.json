@@ -1,0 +1,47 @@
+{
+	"name": "AzureSQLJOBDataDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Metadata_SQLDB_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "varchar"
+			},
+			{
+				"name": "jobname",
+				"type": "varchar"
+			},
+			{
+				"name": "src_folderpath",
+				"type": "varchar"
+			},
+			{
+				"name": "tgt_folderpath",
+				"type": "varchar"
+			},
+			{
+				"name": "directory",
+				"type": "varchar"
+			},
+			{
+				"name": "status",
+				"type": "varchar"
+			},
+			{
+				"name": "processedon",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "JOB_LIST"
+		}
+	}
+}

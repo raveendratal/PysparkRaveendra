@@ -5,12 +5,12 @@
 		"annotations": [],
 		"type": "AzureDataLakeStore",
 		"typeProperties": {
-			"dataLakeStoreUri": "https://pysparkadls.azuredatalakestore.net/webhdfs/v1",
-			"servicePrincipalId": "727e75cd-cee7-4ecd-a39c-5702c63209d5",
-			"tenant": "d14bffed-15fe-4426-adc3-19d215af763b",
-			"subscriptionId": "74123a04-32df-4350-bed5-d8d0526526f9",
-			"resourceGroupName": "eswar_rg",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBZU1BBUktURUxVR1VBREZfYzBlM2JjMmItNmIxNS00MWM5LWJlY2EtM2E0ZDUzMWM4ZDVjIg0KfQ=="
+			"dataLakeStoreUri": "https://azureadlsgen1.azuredatalakestore.net/webhdfs/v1",
+			"servicePrincipalId": "18fc6caa-cd63-4a7a-b55e-6e8cfa5aac71",
+			"tenant": "09d69696-ccc0-4686-b28c-6e053d4d3f03",
+			"subscriptionId": "bd66c874-48fe-4dc8-87c6-d2d0e4100413",
+			"resourceGroupName": "my_rg",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBZU1BBUktBREZWMl8yNmE1Y2UwZS0xNGMwLTQ0NzktYTAzOS1lMjE1MmE4YmExMTUiDQp9"
 		}
 	}
 }

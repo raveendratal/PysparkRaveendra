@@ -1,0 +1,28 @@
+{
+	"name": "Source_Folder_Metadata_DS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ADLS_GEN1_LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"folderPath": {
+					"value": "@concat(dataset().FolderPath,'/',dataset().Directory)",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

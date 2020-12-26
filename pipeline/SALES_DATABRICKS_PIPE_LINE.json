@@ -15,13 +15,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_channels_dim",
-					"baseParameters": {
-						"channel_status": {
-							"value": "@pipeline().parameters.channel_status",
-							"type": "Expression"
-						}
-					}
+					"notebookPath": "/Shared/Project_Training_nov_batch/NB_channels_dim"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_LS",
@@ -41,13 +35,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_countries_dim",
-					"baseParameters": {
-						"channel_status": {
-							"value": "@pipeline().parameters.channel_status",
-							"type": "Expression"
-						}
-					}
+					"notebookPath": "/Shared/Project_Training_nov_batch/NB_countries_dim"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_LS",
@@ -67,13 +55,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_customers_dim",
-					"baseParameters": {
-						"channel_status": {
-							"value": "@pipeline().parameters.channel_status",
-							"type": "Expression"
-						}
-					}
+					"notebookPath": "/Shared/Project_Training_nov_batch/NB_customers_dim"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_LS",
@@ -93,13 +75,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_product_dim",
-					"baseParameters": {
-						"channel_status": {
-							"value": "@pipeline().parameters.channel_status",
-							"type": "Expression"
-						}
-					}
+					"notebookPath": "/Shared/Project_Training_nov_batch/NB_product_dim"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_LS",
@@ -119,13 +95,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_promotions_dim",
-					"baseParameters": {
-						"channel_status": {
-							"value": "@pipeline().parameters.channel_status",
-							"type": "Expression"
-						}
-					}
+					"notebookPath": "/Shared/Project_Training_nov_batch/NB_promotions_dim"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_LS",
@@ -145,70 +115,7 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_times_dim",
-					"baseParameters": {
-						"channel_status": {
-							"value": "@pipeline().parameters.channel_status",
-							"type": "Expression"
-						}
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "AzureDatabricks_LS",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "SALES_FACT",
-				"type": "DatabricksNotebook",
-				"dependsOn": [
-					{
-						"activity": "CHANNEL_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "COUNTRIES_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "CUSTOMERS_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "PRODUCT_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "PROMOTIONS_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					},
-					{
-						"activity": "TIMES_DIM",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"notebookPath": "/Shared/Project_Training_nov_batch/NB_sales_fact"
+					"notebookPath": "/Shared/Project_Training_nov_batch/NB_times_dim"
 				},
 				"linkedServiceName": {
 					"referenceName": "AzureDatabricks_LS",
@@ -216,11 +123,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"channel_status": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }

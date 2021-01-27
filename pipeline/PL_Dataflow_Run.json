@@ -1,9 +1,9 @@
 {
-	"name": "pipeline1",
+	"name": "PL_Dataflow_Run",
 	"properties": {
 		"activities": [
 			{
-				"name": "Derived_column",
+				"name": "dataflow1",
 				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "Derived_column",
+						"referenceName": "dataflow1",
 						"type": "DataFlowReference"
 					},
 					"compute": {
@@ -28,7 +28,7 @@
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2021-01-20T02:43:56Z"
+		"lastPublishTime": "2021-01-19T02:32:11Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

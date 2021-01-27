@@ -1,0 +1,41 @@
+{
+	"name": "DS_ADLS_DEPART_MANAGER",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "dept_manager.csv",
+				"folderPath": "source_data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "dept_no",
+				"type": "String"
+			},
+			{
+				"name": "emp_no",
+				"type": "String"
+			},
+			{
+				"name": "from_date",
+				"type": "String"
+			},
+			{
+				"name": "to_date",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "LS_ORCL_ON_PREM_SRC",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Oracle",
+		"typeProperties": {
+			"connectionString": "host=localhost;port=1521;sid=ORCL;user id=scott",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIxZmE3ZDVmMi0zZDIwLTRiYWMtODA1MS1lMDEzOWE0ZTNiNmIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfHosted-IR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

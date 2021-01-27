@@ -1,0 +1,32 @@
+{
+	"name": "unpivot_dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_ADLS_SRC_UNPIVOT_DATA",
+						"type": "DatasetReference"
+					},
+					"name": "DSSRCUNPIVOT"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_ABLB_EMP_TARGET",
+						"type": "DatasetReference"
+					},
+					"name": "unpivotingdata"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Unpivot1"
+				}
+			],
+			"script": "source(output(\n\t\torder_number as string,\n\t\tcustomer as string,\n\t\tapple as string,\n\t\tbanana as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> DSSRCUNPIVOT\nDSSRCUNPIVOT unpivot(output(\n\t\tproduct as string,\n\t\tqty as string\n\t),\n\tungroupBy(order_number,\n\t\tcustomer),\n\tlateral: true,\n\tignoreNullPivots: false) ~> Unpivot1\nUnpivot1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['unpivot_data.csv'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> unpivotingdata"
+		}
+	}
+}

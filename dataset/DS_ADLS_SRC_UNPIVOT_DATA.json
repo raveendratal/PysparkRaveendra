@@ -1,0 +1,41 @@
+{
+	"name": "DS_ADLS_SRC_UNPIVOT_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "unpivot.csv",
+				"folderPath": "source_data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "order_number",
+				"type": "String"
+			},
+			{
+				"name": "customer",
+				"type": "String"
+			},
+			{
+				"name": "apple",
+				"type": "String"
+			},
+			{
+				"name": "banana",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

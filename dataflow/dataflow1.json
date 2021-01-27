@@ -1,0 +1,45 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "DS_EMP_SRC_ADLS",
+						"type": "DatasetReference"
+					},
+					"name": "SRCEMPADLS"
+				},
+				{
+					"dataset": {
+						"referenceName": "DS_DEPT_SRC_ADLS",
+						"type": "DatasetReference"
+					},
+					"name": "SRCDEPTADLS"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_ABLB_EMP_TARGET",
+						"type": "DatasetReference"
+					},
+					"name": "EMPTARGETBLOB"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "Filter1"
+				},
+				{
+					"name": "Sort1"
+				}
+			],
+			"script": "source(output(\n\t\tEMPNO as string,\n\t\tENAME as string,\n\t\tJOB as string,\n\t\tMGR as string,\n\t\tHIREDATE as string,\n\t\tSAL as string,\n\t\tCOMM as string,\n\t\tDEPTNO as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> SRCEMPADLS\nsource(output(\n\t\tDeptno as string,\n\t\tDname as string,\n\t\tLoc as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> SRCDEPTADLS\nSRCEMPADLS, SRCDEPTADLS join(SRCEMPADLS@DEPTNO == SRCDEPTADLS@Deptno,\n\tjoinType:'outer',\n\tpartitionBy('hash', 1),\n\tbroadcast: 'auto')~> Join1\nJoin1 filter(SRCEMPADLS@DEPTNO=='30') ~> Filter1\nFilter1 sort(asc(ENAME, true)) ~> Sort1\nSort1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['empdatafile.csv'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> EMPTARGETBLOB"
+		}
+	}
+}

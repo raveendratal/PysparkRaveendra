@@ -1,0 +1,11 @@
+{
+	"name": "LS_DEV_keyvault",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://pyspark-dev-kv.vault.azure.net/"
+		}
+	}
+}

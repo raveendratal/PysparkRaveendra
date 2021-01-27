@@ -1,0 +1,22 @@
+{
+	"name": "DS_ABLS_TIMES_TARGET_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ABLS_practice1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "projectz/target/times",
+				"fileSystem": "sales"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

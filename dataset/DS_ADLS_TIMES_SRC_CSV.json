@@ -1,0 +1,137 @@
+{
+	"name": "DS_ADLS_TIMES_SRC_CSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "06-12-2020-10-20-13.csv",
+				"folderPath": "source/times"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}

@@ -53,6 +53,45 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "Trigger_Id",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "V_name",
+					"value": {
+						"value": "@pipeline().TriggerId",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Trigger_Name",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "V_name",
+					"value": {
+						"value": "@pipeline().TriggerName",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Trigger_Type",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "V_name",
+					"value": {
+						"value": "@pipeline().TriggerType",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {

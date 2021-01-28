@@ -16,14 +16,14 @@
 			"recurrence": {
 				"frequency": "Day",
 				"interval": 1,
-				"startTime": "2021-01-28T14:47:00Z",
-				"timeZone": "UTC",
+				"startTime": "2021-01-28T14:47:00",
+				"timeZone": "India Standard Time",
 				"schedule": {
 					"minutes": [
-						30
+						22
 					],
 					"hours": [
-						1
+						20
 					]
 				}
 			}

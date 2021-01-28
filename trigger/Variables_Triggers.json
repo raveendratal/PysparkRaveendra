@@ -14,18 +14,10 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Day",
-				"interval": 1,
+				"frequency": "Minute",
+				"interval": 5,
 				"startTime": "2021-01-28T14:47:00",
-				"timeZone": "India Standard Time",
-				"schedule": {
-					"minutes": [
-						22
-					],
-					"hours": [
-						20
-					]
-				}
+				"timeZone": "India Standard Time"
 			}
 		}
 	}

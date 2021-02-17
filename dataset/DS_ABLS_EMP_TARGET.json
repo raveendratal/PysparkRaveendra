@@ -1,0 +1,24 @@
+{
+	"name": "DS_ABLS_EMP_TARGET",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ABLS_TARGET",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "emp_data",
+				"container": "target"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

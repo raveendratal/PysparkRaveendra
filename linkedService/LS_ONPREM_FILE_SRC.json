@@ -1,0 +1,17 @@
+{
+	"name": "LS_ONPREM_FILE_SRC",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "E:\\files\\Data_Files\\onprem_data",
+			"userId": "raveendra",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkOTQ3OGRkYi04OTFiLTQ2N2UtYTE4MC0xMWNmOGQyODU2NGMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "SelfHosted-IntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

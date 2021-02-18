@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Derived_column",
-				"type": "ExecuteDataFlow",
+				"name": "Delete1",
+				"type": "Delete",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,20 +15,110 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataflow": {
-						"referenceName": "Derived_column",
-						"type": "DataFlowReference"
+					"dataset": {
+						"referenceName": "DS_ADLS_EMP_FILE_SRC",
+						"type": "DatasetReference"
 					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
-					},
-					"traceLevel": "Fine"
+					"enableLogging": false,
+					"storeSettings": {
+						"type": "AzureDataLakeStoreReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					}
+				}
+			},
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Delete1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ENAME",
+					"value": "RAJ"
+				}
+			},
+			{
+				"name": "Set variable1_copy1",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "LOC",
+					"value": "HYDERABAD"
+				}
+			},
+			{
+				"name": "Append variable1",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Set variable1_copy1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ADDRESS",
+					"value": "BANGALORE"
+				}
+			},
+			{
+				"name": "Append variable1_copy1",
+				"type": "AppendVariable",
+				"dependsOn": [
+					{
+						"activity": "Append variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "ADDRESS",
+					"value": "HYDERABAD"
 				}
 			}
 		],
+		"parameters": {
+			"SOURCEPATH": {
+				"type": "string"
+			},
+			"TARGETPATH": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"ENAME": {
+				"type": "String",
+				"defaultValue": "SRINI"
+			},
+			"LOC": {
+				"type": "String",
+				"defaultValue": "BANGALORE"
+			},
+			"ADDRESS": {
+				"type": "Array"
+			}
+		},
 		"annotations": [],
-		"lastPublishTime": "2021-01-20T02:43:56Z"
+		"lastPublishTime": "2021-02-17T15:31:20Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

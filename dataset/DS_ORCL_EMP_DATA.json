@@ -1,0 +1,17 @@
+{
+	"name": "DS_ORCL_EMP_DATA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ORCL_SRC_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SCOTT",
+			"table": "EMP"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

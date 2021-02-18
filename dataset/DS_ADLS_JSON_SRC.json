@@ -2,7 +2,7 @@
 	"name": "DS_ADLS_JSON_SRC",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "LS_ADLS_SRC",
+			"referenceName": "LS_ADLS_GEN1_SRC",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureDataLakeStoreLocation",
 				"fileName": "sample_json.json",
-				"folderPath": "source_data"
+				"folderPath": "source"
 			}
 		},
 		"schema": {

@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "E:\\files\\SH\\",
+			"host": "E:/files/SH",
 			"userId": "raveendra",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1YmY5MGY0ZS00YTUzLTQ2ZjYtODVmMC00MzVhN2E5MjU1NTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwY2ZiNzRmZC1kMzc4LTQ1NmYtOTMzMi0yZGVlNzU3NDMwMGMiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SelfHosted-IntegrationRuntime",

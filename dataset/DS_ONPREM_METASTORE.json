@@ -1,0 +1,25 @@
+{
+	"name": "DS_ONPREM_METASTORE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ONPREM_FILE_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Directory": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"folderPath": {
+					"value": "@dataset().Directory",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

@@ -127,7 +127,14 @@
 						{
 							"name": "Copy data1",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "OnPrem_To_Azure",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "7.00:00:00",
 								"retry": 0,
@@ -195,6 +202,78 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "OnPrem_To_Azure",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "BinarySource",
+									"storeSettings": {
+										"type": "FileServerReadSettings",
+										"recursive": true
+									},
+									"formatSettings": {
+										"type": "BinaryReadSettings"
+									}
+								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureDataLakeStoreWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_ONPREM_BINARY_BINARY",
+									"type": "DatasetReference",
+									"parameters": {
+										"FolderPath": {
+											"value": "@pipeline().parameters.SourceStore_Location",
+											"type": "Expression"
+										},
+										"Directory": {
+											"value": "@pipeline().parameters.SourceStore_Directory",
+											"type": "Expression"
+										},
+										"filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "Source_ADLS_DS",
+									"type": "DatasetReference",
+									"parameters": {
+										"FolderPath": {
+											"value": "@pipeline().parameters.SourceStore_Location",
+											"type": "Expression"
+										},
+										"Directory": {
+											"value": "@pipeline().parameters.TargetStore_Directory",
+											"type": "Expression"
+										},
+										"filename": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
 					]
 				}
@@ -213,13 +292,9 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "Source_Folder_Metadata_DS",
+						"referenceName": "DS_ONPREM_METASTORE",
 						"type": "DatasetReference",
 						"parameters": {
-							"FolderPath": {
-								"value": "@pipeline().parameters.SourceStore_Location",
-								"type": "Expression"
-							},
 							"Directory": {
 								"value": "@pipeline().parameters.SourceStore_Directory",
 								"type": "Expression"
@@ -230,8 +305,7 @@
 						"childItems"
 					],
 					"storeSettings": {
-						"type": "AzureDataLakeStoreReadSettings",
-						"recursive": true,
+						"type": "FileServerReadSettings",
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {

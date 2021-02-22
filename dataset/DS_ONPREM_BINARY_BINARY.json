@@ -1,0 +1,31 @@
+{
+	"name": "DS_ONPREM_BINARY_BINARY",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ONPREM_FILE_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FolderPath": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": {
+					"value": "@concat(dataset().Directory,'/',dataset().filename)",
+					"type": "Expression"
+				}
+			}
+		}
+	}
+}

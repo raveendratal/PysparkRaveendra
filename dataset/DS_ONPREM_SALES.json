@@ -1,0 +1,35 @@
+{
+	"name": "DS_ONPREM_SALES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ONPREM_FILE_SRC",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			" FolderPath": {
+				"type": "string"
+			},
+			"Directory": {
+				"type": "string"
+			},
+			"filename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": {
+					"value": "@concat(dataset().Directory,'/',dataset().filename)",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

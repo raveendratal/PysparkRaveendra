@@ -1,0 +1,185 @@
+{
+	"name": "PL_ADBS_NOTEBOOKS_JOBS",
+	"properties": {
+		"activities": [
+			{
+				"name": "ACT_NB_CHANNELS",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_channels_dim"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ACT_NB_COUNTRIES",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_countries_dim"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ACT_NB_CUSTOMERS",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_customers_dim"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ACT_NB_PRODUCT_DIM",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_product_dim"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ACT_NB_PROMOTIONS_DIM",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_promotions_dim"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ACT_NB_TIMES_DIM",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_times_dim"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "ACT_NB_SALES_FACT",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "ACT_NB_TIMES_DIM",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "ACT_NB_PROMOTIONS_DIM",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "ACT_NB_PRODUCT_DIM",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "ACT_NB_CUSTOMERS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "ACT_NB_COUNTRIES",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "ACT_NB_CHANNELS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Code_Examples/NB_sales_fact"
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ADBS_DEV",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": []
+	}
+}

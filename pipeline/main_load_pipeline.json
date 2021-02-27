@@ -80,6 +80,26 @@
 						}
 					]
 				}
+			},
+			{
+				"name": "PL_DATABRICKS_NOTEBOOKS",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "ForEach1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PL_ADBS_NOTEBOOKS_JOBS",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"annotations": []

@@ -180,6 +180,8 @@
 				}
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-03-01T16:15:03Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

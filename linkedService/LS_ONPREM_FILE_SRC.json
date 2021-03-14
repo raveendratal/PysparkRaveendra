@@ -7,10 +7,10 @@
 		"typeProperties": {
 			"host": "E:/files/SH/",
 			"userId": "raveendra",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2ODFlMzg2Yy1kZGI0LTQ0ZjctOTI3MC02Mjk4MjJiNjUwODQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiNWFiMDRiYS1mOTUwLTRhZTgtYmJmYS01YzZiNGQyOGQ2OWIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
-			"referenceName": "selfhosted-integration",
+			"referenceName": "selfhosted-linked",
 			"type": "IntegrationRuntimeReference"
 		}
 	}

@@ -5,11 +5,11 @@
 		"annotations": [],
 		"type": "AzureBlobStorage",
 		"typeProperties": {
-			"connectionString": "DefaultEndpointsProtocol=https;AccountName=pysparkadlsgen2;EndpointSuffix=core.windows.net;",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBZU1BBUktBWlVSRUFERlYyXzQyNzU0NDk0LTM0ODUtNDU4Yy04MjFlLTk5NmIyYjdkNWJiNyINCn0="
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=blobstorageadlsgen2;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBZU1BBUktBREZWMl8xMjVhMjVmYS1kZDE0LTQxMmUtYTBmMi1kMmFhMTA5NmRhYmYiDQp9"
 		},
 		"connectVia": {
-			"referenceName": "integrationRuntime1",
+			"referenceName": "integrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
 	}

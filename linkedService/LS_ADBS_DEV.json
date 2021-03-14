@@ -5,12 +5,19 @@
 		"type": "AzureDatabricks",
 		"typeProperties": {
 			"domain": "https://adb-623508575945026.6.azuredatabricks.net",
-			"authentication": "MSI",
-			"workspaceResourceId": "/subscriptions/4e4d082a-03fb-4b5f-8585-20f24cc02800/resourceGroups/rg_dev/providers/Microsoft.Databricks/workspaces/ws_databrickspyspark",
+			"accessToken": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LS_DEV_keyvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "databricks",
+				"secretVersion": "938c5f2324e14f79b4a7ab062753f5f8"
+			},
 			"existingClusterId": "0314-050701-rave636"
 		},
 		"connectVia": {
-			"referenceName": "AutoResolveIntegrationRuntime",
+			"referenceName": "integrationRuntime",
 			"type": "IntegrationRuntimeReference"
 		}
 	},

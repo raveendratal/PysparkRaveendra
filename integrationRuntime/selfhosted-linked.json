@@ -1,0 +1,12 @@
+{
+	"name": "selfhosted-linked",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/4e4d082a-03fb-4b5f-8585-20f24cc02800/resourcegroups/rg_dev/providers/Microsoft.DataFactory/factories/sales-deltalake-dev-adv2/integrationruntimes/Selfhosted-runtime",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}

@@ -1,0 +1,116 @@
+{
+	"name": "ds_onprem_file_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_onprem_file_sales",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "06-12-2020-10-20-55.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "CUST_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_FIRST_NAME",
+				"type": "String"
+			},
+			{
+				"name": "CUST_LAST_NAME",
+				"type": "String"
+			},
+			{
+				"name": "CUST_GENDER",
+				"type": "String"
+			},
+			{
+				"name": "CUST_YEAR_OF_BIRTH",
+				"type": "String"
+			},
+			{
+				"name": "CUST_MARITAL_STATUS",
+				"type": "String"
+			},
+			{
+				"name": "CUST_STREET_ADDRESS",
+				"type": "String"
+			},
+			{
+				"name": "CUST_POSTAL_CODE",
+				"type": "String"
+			},
+			{
+				"name": "CUST_CITY",
+				"type": "String"
+			},
+			{
+				"name": "CUST_CITY_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_STATE_PROVINCE",
+				"type": "String"
+			},
+			{
+				"name": "CUST_STATE_PROVINCE_ID",
+				"type": "String"
+			},
+			{
+				"name": "COUNTRY_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_MAIN_PHONE_NUMBER",
+				"type": "String"
+			},
+			{
+				"name": "CUST_INCOME_LEVEL",
+				"type": "String"
+			},
+			{
+				"name": "CUST_CREDIT_LIMIT",
+				"type": "String"
+			},
+			{
+				"name": "CUST_EMAIL",
+				"type": "String"
+			},
+			{
+				"name": "CUST_TOTAL",
+				"type": "String"
+			},
+			{
+				"name": "CUST_TOTAL_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_SRC_ID",
+				"type": "String"
+			},
+			{
+				"name": "CUST_EFF_FROM",
+				"type": "String"
+			},
+			{
+				"name": "CUST_EFF_TO",
+				"type": "String"
+			},
+			{
+				"name": "CUST_VALID",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

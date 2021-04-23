@@ -1,0 +1,24 @@
+{
+	"name": "ds_adlsgen2_staging_customer_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adlsgen2_sales_target",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "staging/customer",
+				"fileSystem": "salescontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

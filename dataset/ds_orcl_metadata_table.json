@@ -1,0 +1,25 @@
+{
+	"name": "ds_orcl_metadata_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_oracle_customer_source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"src_user_name": {
+				"type": "string"
+			},
+			"src_password": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SCOTT",
+			"table": "JOB_LIST"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

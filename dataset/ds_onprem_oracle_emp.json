@@ -1,0 +1,31 @@
+{
+	"name": "ds_onprem_oracle_emp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_oracle_customer_source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"src_schema_name": {
+				"type": "string"
+			},
+			"src_table_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().src_schema_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().src_table_name",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

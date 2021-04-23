@@ -1,0 +1,87 @@
+{
+	"name": "ds_adlsgen2_json_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adlsgen2_sales_target",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "customers"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sample_json.json",
+				"folderPath": "landing/json_source",
+				"fileSystem": "salescontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"location": {
+					"type": "string"
+				},
+				"satellites": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"goods": {
+					"type": "object",
+					"properties": {
+						"trade": {
+							"type": "boolean"
+						},
+						"customers": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"orders": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"orderId": {
+										"type": "integer"
+									},
+									"orderTotal": {
+										"type": "number"
+									},
+									"shipped": {
+										"type": "object",
+										"properties": {
+											"orderItems": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"itemName": {
+															"type": "string"
+														},
+														"itemQty": {
+															"type": "integer"
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

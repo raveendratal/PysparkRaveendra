@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Delete1",
-				"type": "Delete",
+				"name": "Lookup1",
+				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,24 +15,28 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"dataset": {
-						"referenceName": "DS_ADLS_EMP_FILE_SRC",
-						"type": "DatasetReference"
+					"source": {
+						"type": "OracleSource",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
 					},
-					"enableLogging": false,
-					"storeSettings": {
-						"type": "AzureDataLakeStoreReadSettings",
-						"recursive": true,
-						"enablePartitionDiscovery": false
-					}
+					"dataset": {
+						"referenceName": "ds_orcl_metadata_table",
+						"type": "DatasetReference",
+						"parameters": {
+							"src_user_name": "scott",
+							"src_password": "scott"
+						}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
-				"name": "Set variable1",
-				"type": "SetVariable",
+				"name": "ForEach1",
+				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Delete1",
+						"activity": "Lookup1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -40,85 +44,92 @@
 				],
 				"userProperties": [],
 				"typeProperties": {
-					"variableName": "ENAME",
-					"value": "RAJ"
-				}
-			},
-			{
-				"name": "Set variable1_copy1",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Set variable1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "LOC",
-					"value": "HYDERABAD"
-				}
-			},
-			{
-				"name": "Append variable1",
-				"type": "AppendVariable",
-				"dependsOn": [
-					{
-						"activity": "Set variable1_copy1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "ADDRESS",
-					"value": "BANGALORE"
-				}
-			},
-			{
-				"name": "Append variable1_copy1",
-				"type": "AppendVariable",
-				"dependsOn": [
-					{
-						"activity": "Append variable1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "ADDRESS",
-					"value": "HYDERABAD"
+					"items": {
+						"value": "@activity('Lookup1').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "Copy data1",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "OracleSource",
+									"partitionOption": "None",
+									"queryTimeout": "02:00:00"
+								},
+								"sink": {
+									"type": "DelimitedTextSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "DelimitedTextWriteSettings",
+										"quoteAllText": true,
+										"fileExtension": ".txt"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_onprem_oracle_emp",
+									"type": "DatasetReference",
+									"parameters": {
+										"src_schema_name": "SCOTT",
+										"src_table_name": "EMP"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_adlsgen2_sales_emp_csv",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
 				}
 			}
 		],
 		"parameters": {
-			"SOURCEPATH": {
-				"type": "string"
+			"user_name": {
+				"type": "string",
+				"defaultValue": "scott"
 			},
-			"TARGETPATH": {
-				"type": "string"
-			}
-		},
-		"variables": {
-			"ENAME": {
-				"type": "String",
-				"defaultValue": "SRINI"
+			"password": {
+				"type": "string",
+				"defaultValue": "scott"
 			},
-			"LOC": {
-				"type": "String",
-				"defaultValue": "BANGALORE"
+			"source_schema_name": {
+				"type": "string",
+				"defaultValue": "SCOTT"
 			},
-			"ADDRESS": {
-				"type": "Array"
+			"source_table_name": {
+				"type": "string",
+				"defaultValue": "EMP"
 			}
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-02-25T06:12:29Z"
+		"lastPublishTime": "2021-04-22T07:06:18Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

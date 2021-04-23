@@ -1,0 +1,41 @@
+{
+	"name": "ds_adlsgen2_dept_csv_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adlsgen2_sales_target",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "customers"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "dept.csv",
+				"folderPath": "landing/dept",
+				"fileSystem": "salescontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Deptno",
+				"type": "String"
+			},
+			{
+				"name": "Dname",
+				"type": "String"
+			},
+			{
+				"name": "Loc",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

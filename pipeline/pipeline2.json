@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
-				"type": "GetMetadata",
+				"name": "Lookup1",
+				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,35 +15,127 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
+					"source": {
+						"type": "OracleSource",
+						"oracleReaderQuery": "select jobname from scott.job_list",
+						"partitionOption": "None",
+						"queryTimeout": "02:00:00"
+					},
 					"dataset": {
-						"referenceName": "DS_ONPREM_METASTORE",
+						"referenceName": "ds_orcl_metadata_table",
 						"type": "DatasetReference",
 						"parameters": {
-							"Directory": {
-								"value": "@pipeline().parameters.SourceStore_Directory",
+							"src_user_name": {
+								"value": "@pipeline().parameters.User_name",
+								"type": "Expression"
+							},
+							"src_password": {
+								"value": "@pipeline().parameters.Password",
 								"type": "Expression"
 							}
 						}
 					},
-					"fieldList": [
-						"childItems"
-					],
-					"storeSettings": {
-						"type": "FileServerReadSettings",
-						"enablePartitionDiscovery": false
-					},
-					"formatSettings": {
-						"type": "BinaryReadSettings"
-					}
+					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "copy_onprem_file_ToAzure",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_onprem_to_azure",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "copy_onprem_file_ToAzure",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Lookup1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "FileServerReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_onprem_file_csv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_adlsgen2_customer_csv",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"parameters": {
-			"SourceStore_Directory": {
+			"User_name": {
 				"type": "string",
-				"defaultValue": "channels"
+				"defaultValue": "scott"
+			},
+			"Password": {
+				"type": "string",
+				"defaultValue": "scott"
 			}
 		},
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-04-22T07:06:19Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

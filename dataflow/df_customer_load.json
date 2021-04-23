@@ -1,0 +1,38 @@
+{
+	"name": "df_customer_load",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_adlsgen2_customer_csv",
+						"type": "DatasetReference"
+					},
+					"name": "adlsgencustomersource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_adlsgen2_staging_customer_csv",
+						"type": "DatasetReference"
+					},
+					"name": "target"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Filter1"
+				},
+				{
+					"name": "Sort1"
+				},
+				{
+					"name": "Select1"
+				}
+			],
+			"script": "source(output(\n\t\tCUST_ID as integer,\n\t\tCUST_FIRST_NAME as string,\n\t\tCUST_LAST_NAME as string,\n\t\tCUST_GENDER as string,\n\t\tCUST_YEAR_OF_BIRTH as short,\n\t\tCUST_MARITAL_STATUS as string,\n\t\tCUST_STREET_ADDRESS as string,\n\t\tCUST_POSTAL_CODE as integer,\n\t\tCUST_CITY as string,\n\t\tCUST_CITY_ID as string,\n\t\tCUST_STATE_PROVINCE as string,\n\t\tCUST_STATE_PROVINCE_ID as string,\n\t\tCOUNTRY_ID as integer,\n\t\tCUST_MAIN_PHONE_NUMBER as string,\n\t\tCUST_INCOME_LEVEL as string,\n\t\tCUST_CREDIT_LIMIT as string,\n\t\tCUST_EMAIL as string,\n\t\tCUST_TOTAL as short,\n\t\tCUST_TOTAL_ID as string,\n\t\tCUST_SRC_ID as string,\n\t\tCUST_EFF_FROM as string,\n\t\tCUST_EFF_TO as integer,\n\t\tCUST_VALID as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false,\n\tpartitionBy('hash', 1)) ~> adlsgencustomersource\nadlsgencustomersource filter(and(CUST_GENDER=='M',  CUST_MARITAL_STATUS=='single')) ~> Filter1\nFilter1 sort(desc(CUST_ID, true)) ~> Sort1\nSort1 select(mapColumn(\n\t\tCUSTOMER_NUMBER = CUST_ID,\n\t\tCUST_FIRST_NAME,\n\t\tCUST_TOTAL_ID,\n\t\tCUST_SRC_ID,\n\t\tCUST_EFF_FROM,\n\t\tCUST_EFF_TO\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\ttruncate: true,\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> target"
+		}
+	}
+}

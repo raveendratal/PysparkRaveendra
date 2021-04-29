@@ -41,7 +41,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "JOB_LIST"
+			"table": "JOB_LIST_DYNAMIC"
 		}
 	}
 }

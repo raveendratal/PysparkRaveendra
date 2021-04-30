@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "AzureDatabricks",
 		"typeProperties": {
-			"domain": "https://adb-7319552592143960.0.azuredatabricks.net",
-			"existingClusterId": "0429-032349-beam273",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBZU1BBUktUUkFJTklOR0FERlYyX2FkNjY3NzdmLTBiNWMtNGUxZC1hNGMyLWIzZmM1OTk1OTE1MiINCn0="
+			"domain": "https://adb-3441998172654970.10.azuredatabricks.net",
+			"existingClusterId": "0430-032159-rebut983",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIlBZU1BBUktUUkFJTklOR0FERlYyXzQ2YWI5NGJlLWU5NGYtNDNlYy1hZGMzLTNjZDY5OGMzNzViYyINCn0="
 		},
 		"connectVia": {
 			"referenceName": "integrationRuntime",

@@ -236,7 +236,7 @@ watermark TIMESTAMP,
 created_on TIMESTAMP ,
 created_by varchar(200) ,
 updated_on TIMESTAMP ,
-updated_by varchar(200) ,
+updated_by varchar(200) 
 ) using delta;
 
 

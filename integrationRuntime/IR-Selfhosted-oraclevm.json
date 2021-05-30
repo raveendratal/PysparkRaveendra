@@ -1,0 +1,6 @@
+{
+	"name": "IR-Selfhosted-oraclevm",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

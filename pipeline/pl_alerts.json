@@ -1,0 +1,30 @@
+{
+	"name": "pl_alerts",
+	"properties": {
+		"activities": [
+			{
+				"name": "SendEmail",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": {
+						"value": "https://prod-08.northcentralus.logic.azure.com:443/workflows/9e55a874055b4716bdfbca7ec2037410/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tvEjNr_UUAhquikSTsj2UGpidja66FtKaCZ-YcD3pns",
+						"type": "Expression"
+					},
+					"method": "POST"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-07-20T02:38:26Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

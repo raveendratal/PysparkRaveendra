@@ -1,0 +1,17 @@
+{
+	"name": "ds_deltalake_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adb_metadata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"typeProperties": {
+			"database": "jobs",
+			"table": "job_list_dynamic"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

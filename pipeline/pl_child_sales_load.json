@@ -1,0 +1,748 @@
+{
+	"name": "pl_child_sales_load",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetMetadata_Onprem",
+				"type": "GetMetadata",
+				"dependsOn": [
+					{
+						"activity": "StartLogging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_onprem_file_getmetadata",
+						"type": "DatasetReference",
+						"parameters": {
+							"ds_folder_name": {
+								"value": "@pipeline().parameters.source_folder_name",
+								"type": "Expression"
+							}
+						}
+					},
+					"fieldList": [
+						"childItems",
+						"itemName"
+					],
+					"storeSettings": {
+						"type": "FileServerReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					},
+					"formatSettings": {
+						"type": "BinaryReadSettings"
+					}
+				}
+			},
+			{
+				"name": "Filter_Files",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "GetMetadata_Onprem",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetMetadata_Onprem').output.childitems",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@equals(item().type,'File')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ForEach_CopyFile",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Filter_Files",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Filter_Files').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "OnPremToLanding",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "BinarySource",
+									"storeSettings": {
+										"type": "FileServerReadSettings",
+										"recursive": true
+									},
+									"formatSettings": {
+										"type": "BinaryReadSettings"
+									}
+								},
+								"sink": {
+									"type": "BinarySink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "ds_onprem_file_binary",
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_folder_name": {
+											"value": "@pipeline().parameters.source_folder_name",
+											"type": "Expression"
+										},
+										"ds_file_name": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "ds_adlsgen2_landing_binary",
+									"type": "DatasetReference",
+									"parameters": {
+										"ds_folder_name": {
+											"value": "@pipeline().parameters.landing_zone_folder_name",
+											"type": "Expression"
+										},
+										"ds_file_name": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"name": "LandingToStaging",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "ForEach_CopyFile",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Dynamic/NB_sales_landing_staging",
+					"baseParameters": {
+						"landing_zone_file_path": {
+							"value": "@pipeline().parameters.landing_zone_file_path",
+							"type": "Expression"
+						},
+						"landing_zone_folder_name": {
+							"value": "@pipeline().parameters.landing_zone_folder_name",
+							"type": "Expression"
+						},
+						"landing_zone_file_name": {
+							"value": "@pipeline().parameters.landing_zone_file_name",
+							"type": "Expression"
+						},
+						"staging_zone_database_name": {
+							"value": "@pipeline().parameters.staging_zone_database_name",
+							"type": "Expression"
+						},
+						"staging_zone_table_name": {
+							"value": "@pipeline().parameters.staging_zone_table_name",
+							"type": "Expression"
+						},
+						"staging_zone_table_pk_column": {
+							"value": "@pipeline().parameters.staging_zone_table_pk_column",
+							"type": "Expression"
+						},
+						"pyspark_schema": {
+							"value": "@pipeline().parameters.pyspark_schema",
+							"type": "Expression"
+						},
+						"job_name": {
+							"value": "@pipeline().parameters.job_name",
+							"type": "Expression"
+						},
+						"job_id": {
+							"value": "@pipeline().parameters.job_id",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks_notebooks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "StagingToCuration",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Wait1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Shared/Pyspark_Project_Dynamic/NB_sales_staging_curated",
+					"baseParameters": {
+						"staging_zone_database_name": {
+							"value": "@pipeline().parameters.staging_zone_database_name",
+							"type": "Expression"
+						},
+						"staging_zone_table_name": {
+							"value": "@pipeline().parameters.staging_zone_table_name",
+							"type": "Expression"
+						},
+						"staging_zone_table_pk_column": {
+							"value": "@pipeline().parameters.staging_zone_table_pk_column",
+							"type": "Expression"
+						},
+						"job_name": {
+							"value": "@pipeline().parameters.job_name",
+							"type": "Expression"
+						},
+						"job_id": {
+							"value": "@pipeline().parameters.job_id",
+							"type": "Expression"
+						},
+						"curation_zone_database_name": {
+							"value": "@pipeline().parameters.curation_zone_database_name",
+							"type": "Expression"
+						},
+						"curation_zone_table_name": {
+							"value": "@pipeline().parameters.curation_zone_table_name",
+							"type": "Expression"
+						},
+						"curation_zone_table_pk_column": {
+							"value": "@pipeline().parameters.curation_zone_table_pk_column",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_databricks_notebooks",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "IFDim",
+				"type": "IfCondition",
+				"dependsOn": [
+					{
+						"activity": "Wait",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(pipeline().parameters.table_type,'dim')",
+						"type": "Expression"
+					},
+					"ifTrueActivities": [
+						{
+							"name": "CurationToDWHDim",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Shared/Pyspark_Project_Dynamic/NB_sales_curation_dwh",
+								"baseParameters": {
+									"job_name": {
+										"value": "@pipeline().parameters.job_name",
+										"type": "Expression"
+									},
+									"job_id": {
+										"value": "@pipeline().parameters.job_id",
+										"type": "Expression"
+									},
+									"curation_zone_database_name": {
+										"value": "@pipeline().parameters.curation_zone_database_name",
+										"type": "Expression"
+									},
+									"curation_zone_table_name": {
+										"value": "@pipeline().parameters.curation_zone_table_name",
+										"type": "Expression"
+									},
+									"curation_zone_table_pk_column": {
+										"value": "@pipeline().parameters.curation_zone_table_pk_column",
+										"type": "Expression"
+									},
+									"dw_zone_database_name": {
+										"value": "@pipeline().parameters.dw_zone_database_name",
+										"type": "Expression"
+									},
+									"dw_zone_table_name": {
+										"value": "@pipeline().parameters.dw_zone_table_name",
+										"type": "Expression"
+									},
+									"dw_zone_table_pk_column": {
+										"value": "@pipeline().parameters.dw_zone_table_pk_column",
+										"type": "Expression"
+									}
+								}
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_databricks_notebooks",
+								"type": "LinkedServiceReference"
+							}
+						},
+						{
+							"name": "CurationToDWHDim_Log",
+							"type": "Lookup",
+							"dependsOn": [
+								{
+									"activity": "CurationToDWHDim",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureDatabricksDeltaLakeSource",
+									"query": {
+										"value": "UPDATE JOBS.pipeline_log SET execution_status='SUCCESS',dwh_read_rows=@{activity('CurationToDWHDim').output.runOutput.dwhRows['num_affected_rows']},dwh_inserted_rows=@{activity('CurationToDWHDim').output.runOutput.dwhRows['num_inserted_rows']},dwh_updated_rows=@{activity('CurationToDWHDim').output.runOutput.dwhRows['num_updated_rows']} WHERE pipeline_runid='@{pipeline().RunId}'",
+										"type": "Expression"
+									}
+								},
+								"dataset": {
+									"referenceName": "ds_deltalake_lookup",
+									"type": "DatasetReference"
+								}
+							}
+						}
+					]
+				}
+			},
+			{
+				"name": "SwitchFacts",
+				"type": "Switch",
+				"dependsOn": [
+					{
+						"activity": "IFDim",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"on": {
+						"value": "@pipeline().parameters.job_name",
+						"type": "Expression"
+					},
+					"cases": [
+						{
+							"value": "sales_transaction",
+							"activities": [
+								{
+									"name": "CurationTodwhsalesFact",
+									"type": "DatabricksNotebook",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"notebookPath": "/Shared/Pyspark_Project_Dynamic/NB_sales_fact_load",
+										"baseParameters": {
+											"job_name": {
+												"value": "@pipeline().parameters.job_name",
+												"type": "Expression"
+											},
+											"job_id": {
+												"value": "@pipeline().parameters.job_id",
+												"type": "Expression"
+											},
+											"curation_zone_database_name": {
+												"value": "@pipeline().parameters.curation_zone_database_name",
+												"type": "Expression"
+											},
+											"curation_zone_table_name": {
+												"value": "@pipeline().parameters.curation_zone_table_name",
+												"type": "Expression"
+											},
+											"curation_zone_table_pk_column": {
+												"value": "@pipeline().parameters.curation_zone_table_pk_column",
+												"type": "Expression"
+											},
+											"dw_zone_database_name": {
+												"value": "@pipeline().parameters.dw_zone_database_name",
+												"type": "Expression"
+											},
+											"dw_zone_table_name": {
+												"value": "@pipeline().parameters.dw_zone_table_name",
+												"type": "Expression"
+											},
+											"dw_zone_table_pk_column": {
+												"value": "@pipeline().parameters.dw_zone_table_pk_column",
+												"type": "Expression"
+											},
+											"staging_zone_database_name": {
+												"value": "@pipeline().parameters.staging_zone_database_name",
+												"type": "Expression"
+											},
+											"staging_zone_table_name": {
+												"value": "@pipeline().parameters.staging_zone_table_name",
+												"type": "Expression"
+											},
+											"staging_zone_table_pk_column": {
+												"value": "@pipeline().parameters.staging_zone_table_pk_column",
+												"type": "Expression"
+											}
+										}
+									},
+									"linkedServiceName": {
+										"referenceName": "ls_databricks_notebooks",
+										"type": "LinkedServiceReference"
+									}
+								}
+							]
+						},
+						{
+							"value": "costs_transaction",
+							"activities": [
+								{
+									"name": "CurationToDWHCostFact",
+									"type": "DatabricksNotebook",
+									"dependsOn": [],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"notebookPath": "/Shared/Pyspark_Project_Dynamic/NB_costs_fact_load",
+										"baseParameters": {
+											"job_name": {
+												"value": "@pipeline().parameters.job_name",
+												"type": "Expression"
+											},
+											"job_id": {
+												"value": "@pipeline().parameters.job_id",
+												"type": "Expression"
+											},
+											"curation_zone_database_name": {
+												"value": "@pipeline().parameters.curation_zone_database_name",
+												"type": "Expression"
+											},
+											"curation_zone_table_name": {
+												"value": "@pipeline().parameters.curation_zone_table_name",
+												"type": "Expression"
+											},
+											"curation_zone_table_pk_column": {
+												"value": "@pipeline().parameters.curation_zone_table_pk_column",
+												"type": "Expression"
+											},
+											"dw_zone_database_name": {
+												"value": "@pipeline().parameters.dw_zone_database_name",
+												"type": "Expression"
+											},
+											"dw_zone_table_name": {
+												"value": "@pipeline().parameters.dw_zone_table_name",
+												"type": "Expression"
+											},
+											"dw_zone_table_pk_column": {
+												"value": "@pipeline().parameters.dw_zone_table_pk_column",
+												"type": "Expression"
+											},
+											"staging_zone_database_name": {
+												"value": "@pipeline().parameters.staging_zone_database_name",
+												"type": "Expression"
+											},
+											"staging_zone_table_name": {
+												"value": "@pipeline().parameters.staging_zone_table_name",
+												"type": "Expression"
+											},
+											"staging_zone_table_pk_column": {
+												"value": "@pipeline().parameters.staging_zone_table_pk_column",
+												"type": "Expression"
+											}
+										}
+									},
+									"linkedServiceName": {
+										"referenceName": "ls_databricks_notebooks",
+										"type": "LinkedServiceReference"
+									}
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"name": "Wait1",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "LandingToStaging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 30
+				}
+			},
+			{
+				"name": "Wait",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "StagingToCuration",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 30
+				}
+			},
+			{
+				"name": "StartLogging",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureDatabricksDeltaLakeSource",
+						"query": {
+							"value": "insert into JOBS.pipeline_log select sha2('@{pipeline().RunId}',256),@{pipeline().parameters.job_id},'@{pipeline().DataFactory}','@{pipeline().Pipeline}','@{pipeline().RunId}','@{pipeline().TriggerType}','@{pipeline().TriggerId}','@{pipeline().TriggerName}', '@{pipeline().TriggerTime}','','','','','','','','','','','','','','','','','','','','','','','',''",
+							"type": "Expression"
+						}
+					},
+					"dataset": {
+						"referenceName": "ds_deltalake_lookup",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "LandingToStaging_Log",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "LandingToStaging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureDatabricksDeltaLakeSource",
+						"query": {
+							"value": "UPDATE JOBS.pipeline_log SET landing_rows=@{activity('LandingToStaging').output.runOutput.landingRows},rejected_rows=@{activity('LandingToStaging').output.runOutput.rejectedRows},staging_rows=@{activity('LandingToStaging').output.runOutput.stagingRows} WHERE pipeline_runid='@{pipeline().RunId}'",
+							"type": "Expression"
+						}
+					},
+					"dataset": {
+						"referenceName": "ds_deltalake_lookup",
+						"type": "DatasetReference"
+					}
+				}
+			},
+			{
+				"name": "StagingToCuration_Log",
+				"type": "Lookup",
+				"dependsOn": [
+					{
+						"activity": "StagingToCuration",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureDatabricksDeltaLakeSource",
+						"query": {
+							"value": "UPDATE JOBS.pipeline_log SET curation_read_rows=@{activity('StagingToCuration').output.runOutput.curationRows['num_affected_rows']},curation_inserted_rows=@{activity('StagingToCuration').output.runOutput.curationRows['num_inserted_rows']},curation_updated_rows=@{activity('StagingToCuration').output.runOutput.curationRows['num_updated_rows']} WHERE pipeline_runid='@{pipeline().RunId}'",
+							"type": "Expression"
+						}
+					},
+					"dataset": {
+						"referenceName": "ds_deltalake_lookup",
+						"type": "DatasetReference"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"job_id": {
+				"type": "string"
+			},
+			"job_name": {
+				"type": "string"
+			},
+			"source_folder_name": {
+				"type": "string"
+			},
+			"landing_zone_file_path": {
+				"type": "string"
+			},
+			"landing_zone_folder_name": {
+				"type": "string"
+			},
+			"landing_zone_file_name": {
+				"type": "string"
+			},
+			"staging_zone_database_name": {
+				"type": "string"
+			},
+			"staging_zone_table_name": {
+				"type": "string"
+			},
+			"staging_zone_table_pk_column": {
+				"type": "string"
+			},
+			"curation_zone_database_name": {
+				"type": "string"
+			},
+			"curation_zone_table_name": {
+				"type": "string"
+			},
+			"curation_zone_table_pk_column": {
+				"type": "string"
+			},
+			"dw_zone_database_name": {
+				"type": "string"
+			},
+			"dw_zone_table_name": {
+				"type": "string"
+			},
+			"dw_zone_table_pk_column": {
+				"type": "string"
+			},
+			"pyspark_schema": {
+				"type": "string"
+			},
+			"table_type": {
+				"type": "string"
+			},
+			"raw_zone_file_path": {
+				"type": "string"
+			},
+			"raw_zone_folder_name": {
+				"type": "string"
+			},
+			"raw_zone_file_name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "Sales"
+		},
+		"annotations": [],
+		"lastPublishTime": "2021-07-20T02:01:03Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

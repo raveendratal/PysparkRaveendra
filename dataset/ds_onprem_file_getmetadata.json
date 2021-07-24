@@ -1,0 +1,26 @@
+{
+	"name": "ds_onprem_file_getmetadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_file_onprem_source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"ds_folder_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"folderPath": {
+					"value": "@dataset().ds_folder_name",
+					"type": "Expression"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

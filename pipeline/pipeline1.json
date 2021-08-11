@@ -3,11 +3,11 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "7.00:00:00",
+					"timeout": "1.00:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -15,121 +15,20 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "OracleSource",
-						"partitionOption": "None",
-						"queryTimeout": "02:00:00"
+					"dataflow": {
+						"referenceName": "df_transformations",
+						"type": "DataFlowReference"
 					},
-					"dataset": {
-						"referenceName": "ds_orcl_metadata_table",
-						"type": "DatasetReference",
-						"parameters": {
-							"src_user_name": "scott",
-							"src_password": "scott"
-						}
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
 					},
-					"firstRowOnly": false
-				}
-			},
-			{
-				"name": "ForEach1",
-				"type": "ForEach",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "@activity('Lookup1').output.value",
-						"type": "Expression"
-					},
-					"isSequential": false,
-					"activities": [
-						{
-							"name": "Copy data1",
-							"type": "Copy",
-							"dependsOn": [],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"source": {
-									"type": "OracleSource",
-									"partitionOption": "None",
-									"queryTimeout": "02:00:00"
-								},
-								"sink": {
-									"type": "DelimitedTextSink",
-									"storeSettings": {
-										"type": "AzureBlobFSWriteSettings"
-									},
-									"formatSettings": {
-										"type": "DelimitedTextWriteSettings",
-										"quoteAllText": true,
-										"fileExtension": ".txt"
-									}
-								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
-							},
-							"inputs": [
-								{
-									"referenceName": "ds_onprem_oracle_emp",
-									"type": "DatasetReference",
-									"parameters": {
-										"src_schema_name": "SCOTT",
-										"src_table_name": "EMP"
-									}
-								}
-							],
-							"outputs": [
-								{
-									"referenceName": "ds_adlsgen2_sales_emp_csv",
-									"type": "DatasetReference"
-								}
-							]
-						}
-					]
+					"traceLevel": "Fine"
 				}
 			}
 		],
-		"parameters": {
-			"user_name": {
-				"type": "string",
-				"defaultValue": "scott"
-			},
-			"password": {
-				"type": "string",
-				"defaultValue": "scott"
-			},
-			"source_schema_name": {
-				"type": "string",
-				"defaultValue": "SCOTT"
-			},
-			"source_table_name": {
-				"type": "string",
-				"defaultValue": "EMP"
-			}
-		},
 		"annotations": [],
-		"lastPublishTime": "2021-04-22T07:06:18Z"
+		"lastPublishTime": "2021-07-30T04:06:16Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

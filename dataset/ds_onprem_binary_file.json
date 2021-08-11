@@ -1,17 +1,24 @@
 {
-	"name": "ds_onprem_file_binary",
+	"name": "ds_onprem_binary_file",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_onprem_fileserver",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"folder_name": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "FileServerLocation",
-				"fileName": "channels06-12-2020-10-20-50.csv",
-				"folderPath": "channels"
+				"folderPath": {
+					"value": "@dataset().folder_name",
+					"type": "Expression"
+				}
 			}
 		}
 	},

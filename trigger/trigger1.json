@@ -2,25 +2,32 @@
 	"name": "trigger1",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
-		"pipeline": {
-			"pipelineReference": {
-				"referenceName": "main_load_pipeline",
-				"type": "PipelineReference"
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_onprem_to_azure_dataprocess",
+					"type": "PipelineReference"
+				}
 			}
-		},
-		"type": "TumblingWindowTrigger",
+		],
+		"type": "ScheduleTrigger",
 		"typeProperties": {
-			"frequency": "Minute",
-			"interval": 5,
-			"startTime": "2021-04-25T11:53:00Z",
-			"endTime": "2021-04-28T11:53:00Z",
-			"delay": "00:00:00",
-			"maxConcurrency": 50,
-			"retryPolicy": {
-				"intervalInSeconds": 30
-			},
-			"dependsOn": []
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2021-07-28T04:16:00",
+				"endTime": "2021-07-31T04:16:00",
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						50
+					],
+					"hours": [
+						9
+					]
+				}
+			}
 		}
 	}
 }

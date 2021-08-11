@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup_Getjobdetails",
+				"name": "LookupGetJobDetails",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -17,21 +17,21 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureDatabricksDeltaLakeSource",
-						"query": "select * from jobs.JOB_LIST_DYNAMIC order by job_id"
+						"query": "select * from jobs.job_list_dynamic where job_status=1 order by job_id"
 					},
 					"dataset": {
-						"referenceName": "ds_deltalake_lookup",
+						"referenceName": "ds_azure_deltalake_control",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
 				}
 			},
 			{
-				"name": "ForEach_Eachjob",
+				"name": "ForEach1",
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Lookup_Getjobdetails",
+						"activity": "LookupGetJobDetails",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -40,11 +40,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Lookup_Getjobdetails').output.value",
+						"value": "@activity('LookupGetJobDetails').output.value",
 						"type": "Expression"
 					},
 					"isSequential": false,
-					"batchCount": 5,
 					"activities": [
 						{
 							"name": "pl_child_sales_load",
@@ -58,16 +57,12 @@
 								},
 								"waitOnCompletion": true,
 								"parameters": {
-									"job_id": {
-										"value": "@item().job_id",
-										"type": "Expression"
-									},
-									"job_name": {
-										"value": "@item().job_name",
-										"type": "Expression"
-									},
 									"source_folder_name": {
 										"value": "@item().source_folder_name",
+										"type": "Expression"
+									},
+									"pyspark_schema": {
+										"value": "@item().pyspark_schema",
 										"type": "Expression"
 									},
 									"landing_zone_file_path": {
@@ -76,10 +71,6 @@
 									},
 									"landing_zone_folder_name": {
 										"value": "@item().landing_zone_folder_name",
-										"type": "Expression"
-									},
-									"landing_zone_file_name": {
-										"value": "@item().landing_zone_file_name",
 										"type": "Expression"
 									},
 									"staging_zone_database_name": {
@@ -95,7 +86,7 @@
 										"type": "Expression"
 									},
 									"curation_zone_database_name": {
-										"value": "@item().curation_zone_database_name",
+										"value": "@item().curation_zone_database_name\t",
 										"type": "Expression"
 									},
 									"curation_zone_table_name": {
@@ -118,24 +109,24 @@
 										"value": "@item().dw_zone_table_pk_column",
 										"type": "Expression"
 									},
-									"pyspark_schema": {
-										"value": "@item().pyspark_schema",
+									"job_id": {
+										"value": "@item().job_id",
+										"type": "Expression"
+									},
+									"job_name": {
+										"value": "@item().job_name",
+										"type": "Expression"
+									},
+									"landing_zone_file_type": {
+										"value": "@item().landing_zone_file_type",
+										"type": "Expression"
+									},
+									"landing_zone_file_name": {
+										"value": "@item().landing_zone_file_name",
 										"type": "Expression"
 									},
 									"table_type": {
 										"value": "@item().table_type",
-										"type": "Expression"
-									},
-									"raw_zone_file_path": {
-										"value": "@item().raw_zone_file_path",
-										"type": "Expression"
-									},
-									"raw_zone_folder_name": {
-										"value": "@item().raw_zone_folder_name",
-										"type": "Expression"
-									},
-									"raw_zone_file_name": {
-										"value": "@item().raw_zone_file_name",
 										"type": "Expression"
 									}
 								}
@@ -143,33 +134,13 @@
 						}
 					]
 				}
-			},
-			{
-				"name": "pl_alerts",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "ForEach_Eachjob",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "pl_alerts",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"folder": {
-			"name": "Sales"
+			"name": "SALES"
 		},
 		"annotations": [],
-		"lastPublishTime": "2021-07-20T02:38:27Z"
+		"lastPublishTime": "2021-08-10T04:26:28Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

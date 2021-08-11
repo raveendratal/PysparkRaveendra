@@ -1,0 +1,9 @@
+{
+	"name": "adfv2trainingravi",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9408982c-a958-424e-950f-ec1b4e89bf7d",
+		"tenantId": "89556edd-0e4a-43c1-bbcb-9139ff026b1f"
+	}
+}

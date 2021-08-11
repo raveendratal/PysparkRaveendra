@@ -1,0 +1,190 @@
+{
+	"name": "ds_azure_deltalake_control",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azure_databricks_deltalake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"typeProperties": {
+			"database": "JOBS",
+			"table": "job_list_dynamic"
+		},
+		"schema": [
+			{
+				"name": "job_id",
+				"type": "string"
+			},
+			{
+				"name": "job_name",
+				"type": "string"
+			},
+			{
+				"name": "source_database_host",
+				"type": "string"
+			},
+			{
+				"name": "source_database_username",
+				"type": "string"
+			},
+			{
+				"name": "source_database_password",
+				"type": "string"
+			},
+			{
+				"name": "source_database_name",
+				"type": "string"
+			},
+			{
+				"name": "source_schema_name",
+				"type": "string"
+			},
+			{
+				"name": "source_table_name",
+				"type": "string"
+			},
+			{
+				"name": "source_file_path",
+				"type": "string"
+			},
+			{
+				"name": "source_file_username",
+				"type": "string"
+			},
+			{
+				"name": "source_file_password",
+				"type": "string"
+			},
+			{
+				"name": "source_folder_name",
+				"type": "string"
+			},
+			{
+				"name": "source_file_name",
+				"type": "string"
+			},
+			{
+				"name": "source_file_type",
+				"type": "string"
+			},
+			{
+				"name": "landing_zone_file_path",
+				"type": "string"
+			},
+			{
+				"name": "landing_zone_folder_name",
+				"type": "string"
+			},
+			{
+				"name": "landing_zone_file_name",
+				"type": "string"
+			},
+			{
+				"name": "landing_zone_file_type",
+				"type": "string"
+			},
+			{
+				"name": "staging_zone_database_name",
+				"type": "string"
+			},
+			{
+				"name": "staging_zone_schema_name",
+				"type": "string"
+			},
+			{
+				"name": "staging_zone_table_name",
+				"type": "string"
+			},
+			{
+				"name": "staging_zone_table_pk_column",
+				"type": "string"
+			},
+			{
+				"name": "curation_zone_database_name",
+				"type": "string"
+			},
+			{
+				"name": "curation_zone_schema_name",
+				"type": "string"
+			},
+			{
+				"name": "curation_zone_table_name",
+				"type": "string"
+			},
+			{
+				"name": "curation_zone_table_pk_column",
+				"type": "string"
+			},
+			{
+				"name": "dw_zone_database_name",
+				"type": "string"
+			},
+			{
+				"name": "dw_zone_schema_name",
+				"type": "string"
+			},
+			{
+				"name": "dw_zone_table_name",
+				"type": "string"
+			},
+			{
+				"name": "dw_zone_table_pk_column",
+				"type": "string"
+			},
+			{
+				"name": "raw_zone_file_path",
+				"type": "string"
+			},
+			{
+				"name": "raw_zone_folder_name",
+				"type": "string"
+			},
+			{
+				"name": "raw_zone_file_name",
+				"type": "string"
+			},
+			{
+				"name": "raw_zone_file_type",
+				"type": "string"
+			},
+			{
+				"name": "pyspark_schema",
+				"type": "string"
+			},
+			{
+				"name": "table_type",
+				"type": "string"
+			},
+			{
+				"name": "job_type",
+				"type": "string"
+			},
+			{
+				"name": "job_status",
+				"type": "string"
+			},
+			{
+				"name": "watermark",
+				"type": "timestamp"
+			},
+			{
+				"name": "created_on",
+				"type": "timestamp"
+			},
+			{
+				"name": "created_by",
+				"type": "string"
+			},
+			{
+				"name": "updated_on",
+				"type": "timestamp"
+			},
+			{
+				"name": "updated_by",
+				"type": "string"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

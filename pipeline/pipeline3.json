@@ -3,104 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Stored procedure1",
-				"type": "SqlServerStoredProcedure",
-				"dependsOn": [
-					{
-						"activity": "copy_onprem_file_ToAzure",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"storedProcedureName": "[dbo].[PROC_ETL_LOAD_STATUS]",
-					"storedProcedureParameters": {
-						"activityname": {
-							"value": {
-								"value": "storedproc",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"activitystatus": {
-							"value": {
-								"value": "@activity('copy_onprem_file_ToAzure').output.executionDetails",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"Createdon": {
-							"value": {
-								"value": "@utcnow()",
-								"type": "Expression"
-							},
-							"type": "DateTime"
-						},
-						"DataFactoryName": {
-							"value": {
-								"value": "@pipeline().DataFactory",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"endtime": {
-							"value": {
-								"value": "@utcnow()",
-								"type": "Expression"
-							},
-							"type": "DateTime"
-						},
-						"ErrorMessage": {
-							"value": null,
-							"type": "String"
-						},
-						"PipelineName": {
-							"value": {
-								"value": "@pipeline().Pipeline",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"readrows": {
-							"value": null,
-							"type": "String"
-						},
-						"runid": {
-							"value": {
-								"value": "@pipeline().RunId",
-								"type": "Expression"
-							},
-							"type": "String"
-						},
-						"starttime": {
-							"value": null,
-							"type": "DateTime"
-						},
-						"writerows": {
-							"value": {
-								"value": "@activity('copy_onprem_file_ToAzure').output.dataWritten",
-								"type": "Expression"
-							},
-							"type": "String"
-						}
-					}
-				},
-				"linkedServiceName": {
-					"referenceName": "ls_azure_sql_db",
-					"type": "LinkedServiceReference"
-				}
-			},
-			{
-				"name": "copy_onprem_file_ToAzure",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -113,15 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "FileServerReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from SalesLT.Customer where CustomerID>100",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
@@ -146,20 +44,20 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_onprem_file_csv",
+						"referenceName": "ds_azuresql_table",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_adlsgen2_customer_csv",
+						"referenceName": "ds_adlsgen2_emp_csv_target",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2021-04-22T07:06:17Z"
+		"lastPublishTime": "2021-08-03T04:57:17Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

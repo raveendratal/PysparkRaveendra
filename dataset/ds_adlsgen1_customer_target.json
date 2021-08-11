@@ -1,0 +1,24 @@
+{
+	"name": "ds_adlsgen1_customer_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adlsgen1_target",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "customer_data.csv",
+				"folderPath": "landing/oracle/customer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

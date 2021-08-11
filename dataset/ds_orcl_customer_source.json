@@ -1,0 +1,17 @@
+{
+	"name": "ds_orcl_customer_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_onprem_oracle_source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SH",
+			"table": "CUSTOMERS"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

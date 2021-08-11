@@ -1,0 +1,43 @@
+{
+	"name": "ds_synapse_jobs_details",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_synapse_dedicated_sqldb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "job_name",
+				"type": "varchar"
+			},
+			{
+				"name": "stg_table",
+				"type": "varchar"
+			},
+			{
+				"name": "target_table",
+				"type": "varchar"
+			},
+			{
+				"name": "proc_name",
+				"type": "varchar"
+			},
+			{
+				"name": "source_folder",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dynamic"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

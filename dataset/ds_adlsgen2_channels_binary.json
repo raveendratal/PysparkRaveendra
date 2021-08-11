@@ -1,17 +1,17 @@
 {
-	"name": "ds_onprem_file_binary",
+	"name": "ds_adlsgen2_channels_binary",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_onprem_fileserver",
+			"referenceName": "ls_adlsgen2_sales",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "FileServerLocation",
-				"fileName": "channels06-12-2020-10-20-50.csv",
-				"folderPath": "channels"
+				"type": "AzureBlobFSLocation",
+				"folderPath": "landing",
+				"fileSystem": "sales"
 			}
 		}
 	},

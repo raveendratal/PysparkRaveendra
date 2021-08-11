@@ -3,11 +3,11 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
-				"type": "Lookup",
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "7.00:00:00",
+					"timeout": "1.00:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -15,127 +15,20 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "OracleSource",
-						"oracleReaderQuery": "select jobname from scott.job_list",
-						"partitionOption": "None",
-						"queryTimeout": "02:00:00"
+					"dataflow": {
+						"referenceName": "df_transformations_1",
+						"type": "DataFlowReference"
 					},
-					"dataset": {
-						"referenceName": "ds_orcl_metadata_table",
-						"type": "DatasetReference",
-						"parameters": {
-							"src_user_name": {
-								"value": "@pipeline().parameters.User_name",
-								"type": "Expression"
-							},
-							"src_password": {
-								"value": "@pipeline().parameters.Password",
-								"type": "Expression"
-							}
-						}
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
 					},
-					"firstRowOnly": false
+					"traceLevel": "Fine"
 				}
-			},
-			{
-				"name": "Execute Pipeline1",
-				"type": "ExecutePipeline",
-				"dependsOn": [
-					{
-						"activity": "copy_onprem_file_ToAzure",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"pipeline": {
-						"referenceName": "pl_onprem_to_azure",
-						"type": "PipelineReference"
-					},
-					"waitOnCompletion": true
-				}
-			},
-			{
-				"name": "copy_onprem_file_ToAzure",
-				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Lookup1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"timeout": "7.00:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "FileServerReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
-					},
-					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
-					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "ds_onprem_file_csv",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "ds_adlsgen2_customer_csv",
-						"type": "DatasetReference"
-					}
-				]
 			}
 		],
-		"parameters": {
-			"User_name": {
-				"type": "string",
-				"defaultValue": "scott"
-			},
-			"Password": {
-				"type": "string",
-				"defaultValue": "scott"
-			}
-		},
 		"annotations": [],
-		"lastPublishTime": "2021-04-22T07:06:19Z"
+		"lastPublishTime": "2021-08-02T03:59:13Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

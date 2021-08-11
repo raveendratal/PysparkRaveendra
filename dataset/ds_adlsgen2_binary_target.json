@@ -1,0 +1,34 @@
+{
+	"name": "ds_adlsgen2_binary_target",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adlsgen2_sales",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"folder_name": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('landing/sales/',dataset().folder_name)",
+					"type": "Expression"
+				},
+				"fileSystem": "sales"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

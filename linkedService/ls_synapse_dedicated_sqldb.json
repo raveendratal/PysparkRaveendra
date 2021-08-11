@@ -1,0 +1,20 @@
+{
+	"name": "ls_synapse_dedicated_sqldb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=salessqlserver.database.windows.net;Initial Catalog=salessqldw;User ID=pysparkadmin",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_az_kvault",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "synapsepassword",
+				"secretVersion": "29b6d12390fc4efbaa098ac1976ee129"
+			}
+		}
+	}
+}

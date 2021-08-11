@@ -6,52 +6,59 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_adlsgen2_emp_csv_source",
+						"referenceName": "ds_adlsgen1_emp_csv_source",
 						"type": "DatasetReference"
 					},
-					"name": "empsrc"
+					"name": "empsource"
 				},
 				{
 					"dataset": {
-						"referenceName": "ds_adlsgen2_dept_csv_source",
+						"referenceName": "ds_adlsgen1_dept_source",
 						"type": "DatasetReference"
 					},
-					"name": "deptsrc"
+					"name": "deptnosource"
 				}
 			],
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_adlsgen2_sales_emp_csv",
+						"referenceName": "ds_adlsgen2_emp_csv_target",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_adlsgen2_emp_csv_target",
+						"type": "DatasetReference"
+					},
+					"name": "sink2"
 				}
 			],
 			"transformations": [
 				{
-					"name": "Join1"
-				},
-				{
-					"name": "totalsalary"
+					"name": "TotalSal"
 				},
 				{
 					"name": "Select1"
 				},
 				{
-					"name": "EMPKEY"
+					"name": "SurrogateKey1"
 				},
 				{
-					"name": "rank"
+					"name": "Filter1"
 				},
 				{
-					"name": "denserank"
+					"name": "Sort1"
 				},
 				{
-					"name": "Sort2"
+					"name": "Join1"
+				},
+				{
+					"name": "Select2"
 				}
 			],
-			"script": "source(output(\n\t\tEMPNO as integer,\n\t\tENAME as string,\n\t\tJOB as string,\n\t\tMGR as string,\n\t\tHIREDATE as string,\n\t\tSAL as integer,\n\t\tCOMM as string,\n\t\tDEPTNO as integer\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> empsrc\nsource(output(\n\t\tDeptno as integer,\n\t\tDname as string,\n\t\tLoc as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> deptsrc\nempsrc, deptsrc join(empsrc@DEPTNO == deptsrc@Deptno,\n\tjoinType:'outer',\n\tbroadcast: 'auto')~> Join1\nJoin1 derive(total_Salary = toInteger(SAL)+iifNull(toInteger(COMM),0)) ~> totalsalary\ntotalsalary select(mapColumn(\n\t\tEMPNO,\n\t\tENAME,\n\t\tJOB,\n\t\tSAL,\n\t\tCOMM,\n\t\tDEPTNO = empsrc@DEPTNO,\n\t\tDeptno = deptsrc@Deptno,\n\t\tDname,\n\t\tLoc,\n\t\ttotal_Salary\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 keyGenerate(output(EMPKEY as long),\n\tstartAt: 1L) ~> EMPKEY\nEMPKEY rank(desc(iifNull(total_Salary,0), true),\n\toutput(emp_rank as long)) ~> rank\nrank rank(desc(iifNull(total_Salary,0), true),\n\toutput(dense_rank as long),\n\tdense: true) ~> denserank\ndenserank sort(desc(total_Salary, false)) ~> Sort2\nSort2 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['empranking.csv'],\n\tpartitionBy('hash', 1),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(output(\n\t\tEMPNO as integer,\n\t\tENAME as string,\n\t\tJOB as string,\n\t\tMGR as integer,\n\t\tHIREDATE as date 'yyyy-MM-dd',\n\t\tSAL as string,\n\t\tCOMM as string,\n\t\tDEPTNO as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> empsource\nsource(output(\n\t\tDeptno as string,\n\t\tDname as string,\n\t\tLoc as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> deptnosource\nempsource derive(TOTAL_SAL = toInteger(SAL)+iifNull(toInteger(COMM),0)) ~> TotalSal\nTotalSal select(mapColumn(\n\t\tEMPLOYEE_NUMBER = EMPNO,\n\t\tEMPLOYEE_NAME = ENAME,\n\t\tJOB_NAME = JOB,\n\t\tHIREDATE,\n\t\tSALARY = SAL,\n\t\tCOMMISION = COMM,\n\t\tDEPTNO,\n\t\tTOTAL_SAL\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 keyGenerate(output(EMPKEY as long),\n\tstartAt: 1L) ~> SurrogateKey1\nSurrogateKey1 filter(toInteger(SALARY)>1000) ~> Filter1\nFilter1 sort(asc(EMPLOYEE_NAME, true),\n\tcaseInsensitive: true,\n\tpartitionLevel: true,\n\tpartitionBy('hash', 1)) ~> Sort1\nempsource, deptnosource join(empsource@DEPTNO == deptnosource@Deptno,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nJoin1 select(mapColumn(\n\t\tEMPNO,\n\t\tENAME,\n\t\tJOB,\n\t\tMGR,\n\t\tHIREDATE,\n\t\tSAL,\n\t\tCOMM,\n\t\tDEPTNO = empsource@DEPTNO,\n\t\tDeptno = deptnosource@Deptno,\n\t\tDname,\n\t\tLoc\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select2\nSort1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['emp_target.csv'],\n\tumask: 0022,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> sink1\nSelect2 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tumask: 0022,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> sink2"
 		}
 	}
 }

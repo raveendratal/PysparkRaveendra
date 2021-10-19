@@ -1,8 +1,8 @@
 {
-	"name": "ds_onprem_file_binary",
+	"name": "ds_azureblob_customer_binary",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_onprem_files",
+			"referenceName": "ls_azure_blob",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
@@ -12,9 +12,8 @@
 		"type": "Binary",
 		"typeProperties": {
 			"location": {
-				"type": "FileServerLocation",
-				"fileName": "customers06-12-2020-10-20-55.csv",
-				"folderPath": "customers"
+				"type": "AzureBlobStorageLocation",
+				"container": "sales"
 			}
 		}
 	},

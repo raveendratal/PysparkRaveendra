@@ -1,25 +1,30 @@
 {
-	"name": "ds_adlsgen2_customer_csv",
+	"name": "ds_onprem_dynamic_folder",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_adlsgen2",
+			"referenceName": "ls_onprem_files",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"folder_name": {
+				"type": "string"
+			}
+		},
 		"folder": {
-			"name": "other_datasets"
+			"name": "sales_load"
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileName": "customers_dim.csv",
-				"folderPath": "landing",
-				"fileSystem": "sales"
+				"type": "FileServerLocation",
+				"folderPath": {
+					"value": "@dataset().folder_name",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
-			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": []

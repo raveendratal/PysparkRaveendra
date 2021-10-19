@@ -1,0 +1,32 @@
+{
+	"name": "ds_synapse_staging",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azuresynapse_dwh",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"db_name": {
+				"type": "string",
+				"defaultValue": "dbo"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().db_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

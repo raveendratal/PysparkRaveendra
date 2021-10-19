@@ -2,8 +2,19 @@
 	"name": "ds_azuresql_table",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase1",
+			"referenceName": "ls_azuresql",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema_name": {
+				"type": "string"
+			},
+			"table_name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "other_datasets"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
@@ -73,8 +84,14 @@
 			}
 		],
 		"typeProperties": {
-			"schema": "SalesLT",
-			"table": "Customer"
+			"schema": {
+				"value": "@dataset().schema_name",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().table_name",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

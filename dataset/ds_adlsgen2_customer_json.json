@@ -1,5 +1,5 @@
 {
-	"name": "ds_adlsgen2_customer_csv",
+	"name": "ds_adlsgen2_customer_json",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adlsgen2",
@@ -9,20 +9,16 @@
 			"name": "other_datasets"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Json",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "customers_dim.csv",
+				"fileName": "customers.json",
 				"folderPath": "landing",
 				"fileSystem": "sales"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			}
 		},
-		"schema": []
+		"schema": {}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

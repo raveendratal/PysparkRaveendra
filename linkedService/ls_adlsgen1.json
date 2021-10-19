@@ -1,0 +1,14 @@
+{
+	"name": "ls_adlsgen1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://pysparkadlsgen1.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "89556edd-0e4a-43c1-bbcb-9139ff026b1f",
+			"subscriptionId": "e0bf1971-b822-46ca-8e4a-72555f0a959e",
+			"resourceGroupName": "rg-dataengineering-dev"
+		}
+	}
+}

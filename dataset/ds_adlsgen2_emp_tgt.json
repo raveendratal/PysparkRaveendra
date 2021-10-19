@@ -1,5 +1,5 @@
 {
-	"name": "ds_adlsgen2_customer_csv",
+	"name": "ds_adlsgen2_emp_tgt",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adlsgen2",
@@ -13,13 +13,20 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "customers_dim.csv",
-				"folderPath": "landing",
+				"fileName": {
+					"value": "@concat('EMP_',utcnow(),'.csv')",
+					"type": "Expression"
+				},
+				"folderPath": "landing/oracle/emp",
 				"fileSystem": "sales"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
+			"nullValue": {
+				"value": "0",
+				"type": "Expression"
+			},
 			"quoteChar": "\""
 		},
 		"schema": []

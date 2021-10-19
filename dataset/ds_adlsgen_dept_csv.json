@@ -1,5 +1,5 @@
 {
-	"name": "ds_adlsgen2_customer_csv",
+	"name": "ds_adlsgen_dept_csv",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adlsgen2",
@@ -13,8 +13,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "customers_dim.csv",
-				"folderPath": "landing",
 				"fileSystem": "sales"
 			},
 			"columnDelimiter": ",",

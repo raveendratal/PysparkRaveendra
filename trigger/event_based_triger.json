@@ -1,0 +1,24 @@
+{
+	"name": "event_based_triger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_onprem_to_adlsge2",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/sales/blobs/dept.csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/e0bf1971-b822-46ca-8e4a-72555f0a959e/resourceGroups/rg-dataengineering-dev/providers/Microsoft.Storage/storageAccounts/pysparkadlsgen2",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

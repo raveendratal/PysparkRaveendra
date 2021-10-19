@@ -1,20 +1,31 @@
 {
-	"name": "ds_adlsgen2_customer_csv",
+	"name": "ds_adlsgen2_source_synapse",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adlsgen2",
 			"type": "LinkedServiceReference"
 		},
-		"folder": {
-			"name": "other_datasets"
+		"parameters": {
+			"folder_name": {
+				"type": "string"
+			},
+			"file_name": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "customers_dim.csv",
-				"folderPath": "landing",
+				"fileName": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('landing/',dataset().folder_name)",
+					"type": "Expression"
+				},
 				"fileSystem": "sales"
 			},
 			"columnDelimiter": ",",

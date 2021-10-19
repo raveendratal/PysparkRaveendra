@@ -1,0 +1,32 @@
+{
+	"name": "pl_onprem_to_azure_tgr",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_onprem_to_adlsge2",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2021-10-06T04:12:00",
+				"timeZone": "India Standard Time",
+				"schedule": {
+					"minutes": [
+						50
+					],
+					"hours": [
+						9
+					]
+				}
+			}
+		}
+	}
+}

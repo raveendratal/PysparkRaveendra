@@ -1,0 +1,13 @@
+{
+	"name": "ds_databricks_deltalake_auditlog",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_databricks_delta_lake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

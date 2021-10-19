@@ -1,0 +1,9 @@
+{
+	"name": "pysparkadfv2-prod",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "00fdc899-1b4f-4faa-9120-62faffb76df1",
+		"tenantId": "89556edd-0e4a-43c1-bbcb-9139ff026b1f"
+	}
+}

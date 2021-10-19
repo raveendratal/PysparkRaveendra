@@ -1,0 +1,144 @@
+{
+	"name": "ds_synapsedwh_customer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_azuresynapse_dwh",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "other_datasets"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "CustomerKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "GeographyKey",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "CustomerAlternateKey",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Title",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FirstName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "MiddleName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "LastName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "NameStyle",
+				"type": "bit"
+			},
+			{
+				"name": "BirthDate",
+				"type": "date"
+			},
+			{
+				"name": "MaritalStatus",
+				"type": "nchar"
+			},
+			{
+				"name": "Suffix",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Gender",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EmailAddress",
+				"type": "nvarchar"
+			},
+			{
+				"name": "YearlyIncome",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "TotalChildren",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "NumberChildrenAtHome",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "EnglishEducation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SpanishEducation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FrenchEducation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "EnglishOccupation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SpanishOccupation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "FrenchOccupation",
+				"type": "nvarchar"
+			},
+			{
+				"name": "HouseOwnerFlag",
+				"type": "nchar"
+			},
+			{
+				"name": "NumberCarsOwned",
+				"type": "tinyint",
+				"precision": 3
+			},
+			{
+				"name": "AddressLine1",
+				"type": "nvarchar"
+			},
+			{
+				"name": "AddressLine2",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Phone",
+				"type": "nvarchar"
+			},
+			{
+				"name": "DateFirstPurchase",
+				"type": "date"
+			},
+			{
+				"name": "CommuteDistance",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimCustomer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

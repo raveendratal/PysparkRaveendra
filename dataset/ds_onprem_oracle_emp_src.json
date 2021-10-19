@@ -1,21 +1,19 @@
 {
-	"name": "ds_onprem_file_binary",
+	"name": "ds_onprem_oracle_emp_src",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_onprem_files",
+			"referenceName": "ls_onprem_oracle",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
 			"name": "other_datasets"
 		},
 		"annotations": [],
-		"type": "Binary",
+		"type": "OracleTable",
+		"schema": [],
 		"typeProperties": {
-			"location": {
-				"type": "FileServerLocation",
-				"fileName": "customers06-12-2020-10-20-55.csv",
-				"folderPath": "customers"
-			}
+			"schema": "SCOTT",
+			"table": "EMP"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

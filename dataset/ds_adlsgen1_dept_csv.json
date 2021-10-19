@@ -1,8 +1,8 @@
 {
-	"name": "ds_adlsgen2_customer_csv",
+	"name": "ds_adlsgen1_dept_csv",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_adlsgen2",
+			"referenceName": "ls_adlsgen1",
 			"type": "LinkedServiceReference"
 		},
 		"folder": {
@@ -12,17 +12,25 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation",
-				"fileName": "customers_dim.csv",
-				"folderPath": "landing",
-				"fileSystem": "sales"
+				"type": "AzureDataLakeStoreLocation",
+				"fileName": "dept.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

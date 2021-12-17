@@ -1,4 +1,8 @@
 -- Databricks notebook source
+print("this is sample print statement")
+
+-- COMMAND ----------
+
 -- MAGIC %python
 
 -- COMMAND ----------

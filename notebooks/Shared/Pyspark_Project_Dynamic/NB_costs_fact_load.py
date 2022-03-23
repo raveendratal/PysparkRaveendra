@@ -227,3 +227,7 @@ func_final_log_append()
 #dbutils.notebook.exit('SUCCESS')
 import json
 dbutils.notebook.exit(json.dumps({"curationRows":curation_rowcount,"dwhRows":dwh_rowcount,"jobName":job_name,"jobId":job_id,"status":"SUCCESS"}))
+
+# COMMAND ----------
+
+print('new line added')

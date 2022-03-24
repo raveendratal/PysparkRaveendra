@@ -1,0 +1,5 @@
+productCode	productName	productLine	productScale	productVendor	productDescription	quantityInStock	buyPrice	MSRP
+S10_1678	1969 Harley Davidson Ultimate Chopper	Motorcycles	01:10	Min Lin Diecast	"Updated Quantity, Buy Price and MSRP"	9833	51.81	99
+S10_1949	1952 Alpine Renault 1300	Classic Cars	01:10	Classic Metal Creations	"Updated Quantity, Buy Price and MSRP"	8000	99	235
+S10_9001	1952 Alpine Renault 1500	Classic Cars	01:10	Classic Metal Creations	"Turnable front wheels, steering function, detailed interior, detailed engine, opening hood, opening trunk, opening doors, and detailed chassis."	7305	102.58	315.3
+S10_9002	1952 Alpine Renault 1600	Classic Cars	01:10	Classic Metal Creations	"Turnable front wheels, steering function, detailed interior, detailed engine, opening hood, opening trunk, opening doors, and detailed chassis."	7305	110.58	615.3

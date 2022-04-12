@@ -36,4 +36,4 @@ df1.write.format("delta").mode("append").saveAsTable("emp")
 
 # COMMAND ----------
 
-df1
+display(df1.limit(5))

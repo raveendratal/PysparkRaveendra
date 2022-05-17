@@ -1,0 +1,109 @@
+{
+    "name": "pl_synapse_resume",
+    "properties": {
+        "activities": [
+            {
+                "name": "Verify_SQLDWH",
+                "type": "WebActivity",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "7.00:00:00",
+                    "retry": 5,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "url": "https://management.azure.com/subscriptions/e0bf1971-b822-8e4a-72555f0a959e/resourceGroups/rg-dev-batch22-de/providers/Microsoft.Sql/servers/batch22sqlserver/databases/synapsedwh/?api-version=2014-04-01-preview",
+                    "method": "GET",
+                    "disableCertValidation": true,
+                    "authentication": {
+                        "type": "MSI",
+                        "resource": {
+                            "value": "https://management.azure.com",
+                            "type": "Expression"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "If Condition1",
+                "type": "IfCondition",
+                "dependsOn": [
+                    {
+                        "activity": "Verify_SQLDWH",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "userProperties": [],
+                "typeProperties": {
+                    "expression": {
+                        "value": "@equals(activity('Verify_SQLDWH').output.properties.status,'Paused')",
+                        "type": "Expression"
+                    },
+                    "ifFalseActivities": [
+                        {
+                            "name": "Pause_SQLDWH",
+                            "type": "WebActivity",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "7.00:00:00",
+                                "retry": 5,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "url": "https://management.azure.com/subscriptions/e0bf1971-b822-8e4a-72555f0a959e/resourceGroups/rg-dev-batch22-de/providers/Microsoft.Sql/servers/batch22sqlserver/databases/synapsedwh/pause?api-version=2014-04-01-preview",
+                                "method": "POST",
+                                "disableCertValidation": true,
+                                "authentication": {
+                                    "type": "MSI",
+                                    "resource": {
+                                        "value": "https://management.azure.com",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "ifTrueActivities": [
+                        {
+                            "name": "Resume_SQLDWH",
+                            "type": "WebActivity",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "7.00:00:00",
+                                "retry": 5,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "url": "https://management.azure.com/subscriptions/e0bf1971-46ca-8e4a-72555f0a959e/resourceGroups/rg-dev-batch22-de/providers/Microsoft.Sql/servers/batch22sqlserver/databases/synapsedwh/resume?api-version=2014-04-01-preview",
+                                "method": "POST",
+                                "disableCertValidation": true,
+                                "authentication": {
+                                    "type": "MSI",
+                                    "resource": {
+                                        "value": "https://management.azure.com",
+                                        "type": "Expression"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "folder": {
+            "name": "synapse"
+        },
+        "annotations": []
+    }
+}

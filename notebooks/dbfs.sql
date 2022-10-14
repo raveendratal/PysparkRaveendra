@@ -12,10 +12,6 @@
 
 -- COMMAND ----------
 
--- MAGIC %fs ls /databricks-datasets
-
--- COMMAND ----------
-
 -- MAGIC %sql
 -- MAGIC select
 -- MAGIC   *
@@ -26,3 +22,8 @@
 
 -- COMMAND ----------
 
+show tables
+
+-- COMMAND ----------
+
+select * from emp

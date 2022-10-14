@@ -2,6 +2,8 @@
 Creating Internal or Managed ORC Table in hive.
 *********************************************/
 
+/* this is new notebook */
+
 CREATE TABLE `emp_orc_new`(
   `empno` string, 
   `ename` string, 

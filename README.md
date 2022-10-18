@@ -12,6 +12,11 @@ code
 <h1 align="center">Hello 👋  : TR Raveendra <img src="https://github.com/raveendratal/PysparkTelugu/blob/master/images/Developer.gif" width="40px"></h1>
 <h3 align="center"> Big Data With Cloud Data Engineering</h3><br>
 
+
+<img align="right" alt="GIF"  width="300px" src="https://github.com/raveendratal/PysparkTelugu/blob/master/images/desktop.webp" />
+
+
+
 [![Hello programmer Welcome to my profile](https://img.shields.io/badge/Hello,Programmer!-Welcome<3-brightgreen.svg?style=flat&logo=github)](https://github.com/raveendratal) [![Profile](https://Visitor-badge.glitch.me/badge?page_id=raveendratal.profileviews-badge)](https://github.com/raveendratal) [![Open Source Love](https://img.shields.io/github/followers/raveendratal?style=social)](https://github.com/raveendratal?tab=followers)[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/raveendratal)[![Repos Badge](https://badges.pufler.dev/repos/raveendratal)](https://badges.pufler.dev/repos/raveendratal)[![Connect on LinkedIn](https://img.shields.io/badge/--linkedin?label=LinkedIn&logo=LinkedIn&style=social)](https://www.linkedin.com/in/trraveendra/)
 <br>
  

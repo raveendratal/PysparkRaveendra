@@ -21,3 +21,12 @@ display(df) -- df.collect()
 
 # COMMAND ----------
 
+display(dbutils.fs.ls("/"))
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from emp
+
+# COMMAND ----------
+

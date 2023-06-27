@@ -22,3 +22,18 @@ df1.write.format("delta").saveAsTable("emp_delta")
 
 # MAGIC %sql
 # MAGIC select * from emp_delta
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC show databases;
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from emp_delta
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select deptno,sum(sal) from emp_delta group by deptno

@@ -1,0 +1,101 @@
+Sale_id|City_id|Customer_id|Bill_To_Customer_id|Stock_Item_id|Invoice_Date|Delivery_Date|Salesperson_id|WWI_Invoice_ID|Description|Package|Quantity|Unit_Price|Tax_Rate|Total_Excluding_Tax|Tax_Amount|Profit|Total_Including_Tax|Total_Dry_Items|Total_Chiller_items|Lineage_Key|filename|created_at|updated_at|source_type
+1|1|1|1|1|2025-01-01|2025-01-03|1|10001|Sale of Sparkling Water to Excellent Bike Works|Carton|10|1.50|0.10|15.00|1.50|3.00|16.50|10|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+2|2|2|2|2|2025-01-02|2025-01-04|2|10002|Sale of Still Water to Rural Cycle Shop|Carton|5|1.00|0.10|5.00|0.50|1.00|5.50|5|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+3|3|3|3|3|2025-01-03|2025-01-05|3|10003|Sale of Cola Can to Town Bikes|Carton|20|0.75|0.10|15.00|1.50|4.00|16.50|20|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+4|4|4|4|4|2025-01-04|2025-01-06|4|10004|Sale of Lemonade Can to Urban Wheels|Carton|15|0.70|0.10|10.50|1.05|2.50|11.55|15|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+5|5|5|5|5|2025-01-05|2025-01-07|5|10005|Sale of Orange Juice to Mountain Bikes Inc.|Carton|6|2.00|0.10|12.00|1.20|3.00|13.20|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+6|6|6|6|6|2025-01-06|2025-01-08|6|10006|Sale of Apple Juice to City Cycle Center|Carton|6|2.10|0.10|12.60|1.26|3.20|13.86|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+7|7|7|7|7|2025-01-07|2025-01-09|7|10007|Sale of Milk to Global Sports Retailers|Carton|12|2.50|0.05|30.00|1.50|7.00|31.50|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+8|8|8|8|8|2025-01-08|2025-01-10|8|10008|Sale of Chocolate Milk to National Sporting Goods|Carton|24|1.80|0.05|43.20|2.16|10.00|45.36|0|24|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+9|9|9|9|9|2025-01-09|2025-01-11|9|10009|Sale of Strawberry Yogurt to Outdoor Adventure Corp.|Carton|48|1.20|0.05|57.60|2.88|14.00|60.48|0|48|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+10|10|10|10|10|2025-01-10|2025-01-12|10|10010|Sale of Vanilla Yogurt to Extreme Outdoors|Carton|48|1.10|0.05|52.80|2.64|13.00|55.44|0|48|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+11|1|11|11|11|2025-01-11|2025-01-13|1|10011|Sale of Cheddar Cheese to Excellent Bike Works|Carton|6|4.00|0.05|24.00|1.20|6.00|25.20|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+12|2|12|12|12|2025-01-12|2025-01-14|2|10012|Sale of Swiss Cheese to Rural Cycle Shop|Carton|6|4.20|0.05|25.20|1.26|6.30|26.46|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+13|3|13|13|13|2025-01-13|2025-01-15|3|10013|Sale of Mozzarella Cheese to Town Bikes|Carton|6|3.80|0.05|22.80|1.14|5.70|23.94|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+14|4|14|14|14|2025-01-14|2025-01-16|4|10014|Sale of Butter to Urban Wheels|Carton|12|3.50|0.05|42.00|2.10|10.50|44.10|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+15|5|15|15|15|2025-01-15|2025-01-17|5|10015|Sale of Margarine to Mountain Bikes Inc.|Carton|12|2.80|0.05|33.60|1.68|8.40|35.28|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+16|6|16|16|16|2025-01-16|2025-01-18|6|10016|Sale of Bread White Sliced to City Cycle Center|Carton|10|2.20|0.05|22.00|1.10|5.50|23.10|10|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+17|7|17|17|17|2025-01-17|2025-01-19|7|10017|Sale of Bread Whole Wheat Sliced to Global Sports Retailers|Carton|10|2.40|0.05|24.00|1.20|6.00|25.20|10|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+18|8|18|18|18|2025-01-18|2025-01-20|8|10018|Sale of Croissants 6 Pack to National Sporting Goods|Carton|6|3.00|0.05|18.00|0.90|4.50|18.90|6|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+19|9|19|19|19|2025-01-19|2025-01-21|9|10019|Sale of Muffins Blueberry to Outdoor Adventure Corp.|Carton|6|3.50|0.05|21.00|1.05|5.25|22.05|6|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+20|10|20|20|20|2025-01-20|2025-01-22|10|10020|Sale of Cookies Chocolate Chip to Extreme Outdoors|Carton|12|2.50|0.05|30.00|1.50|7.50|31.50|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+21|1|21|21|21|2025-01-21|2025-01-23|1|10021|Sale of Cookies Oatmeal Raisin to Excellent Bike Works|Carton|12|2.40|0.05|28.80|1.44|7.20|30.24|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+22|2|22|22|22|2025-01-22|2025-01-24|2|10022|Sale of Crackers Salted to Rural Cycle Shop|Carton|24|2.00|0.05|48.00|2.40|12.00|50.40|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+23|3|23|23|23|2025-01-23|2025-01-25|3|10023|Sale of Crackers Sesame to Town Bikes|Carton|24|2.10|0.05|50.40|2.52|12.60|52.92|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+24|4|24|24|24|2025-01-24|2025-01-26|4|10024|Sale of Potato Chips Salted to Urban Wheels|Carton|24|2.80|0.05|67.20|3.36|16.80|70.56|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+25|5|25|25|25|2025-01-25|2025-01-27|5|10025|Sale of Potato Chips BBQ to Mountain Bikes Inc.|Carton|24|2.90|0.05|69.60|3.48|17.40|73.08|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+26|6|26|26|26|2025-01-26|2025-01-28|6|10026|Sale of Pretzels to City Cycle Center|Carton|24|2.60|0.05|62.40|3.12|15.60|65.52|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+27|7|27|27|27|2025-01-27|2025-01-29|7|10027|Sale of Popcorn Butter to Global Sports Retailers|Carton|24|2.70|0.05|64.80|3.24|16.20|68.04|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+28|8|28|28|28|2025-01-28|2025-01-30|8|10028|Sale of Peanuts Salted to National Sporting Goods|Carton|12|3.00|0.05|36.00|1.80|9.00|37.80|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+29|9|29|29|29|2025-01-29|2025-01-31|9|10029|Sale of Almonds Roasted to Outdoor Adventure Corp.|Carton|12|4.50|0.05|54.00|2.70|13.50|56.70|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+30|10|30|30|30|2025-01-30|2025-02-01|10|10030|Sale of Cashews Salted to Extreme Outdoors|Carton|12|4.80|0.05|57.60|2.88|14.40|60.48|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+31|1|31|31|31|2025-01-31|2025-02-02|1|10031|Sale of Mixed Nuts to Excellent Bike Works|Carton|12|5.00|0.05|60.00|3.00|15.00|63.00|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+32|2|32|32|32|2025-02-01|2025-02-03|2|10032|Sale of Sunflower Seeds to Rural Cycle Shop|Carton|12|2.80|0.05|33.60|1.68|8.40|35.28|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+33|3|33|33|33|2025-02-02|2025-02-04|3|10033|Sale of Dried Apricots to Town Bikes|Carton|12|4.00|0.05|48.00|2.40|12.00|50.40|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+34|4|34|34|34|2025-02-03|2025-02-05|4|10034|Sale of Dried Figs to Urban Wheels|Carton|12|4.20|0.05|50.40|2.52|12.60|52.92|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+35|5|35|35|35|2025-02-04|2025-02-06|5|10035|Sale of Raisins to Mountain Bikes Inc.|Carton|6|3.80|0.05|22.80|1.14|5.70|23.94|6|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+36|6|36|36|36|2025-02-05|2025-02-07|6|10036|Sale of Prunes to City Cycle Center|Carton|6|3.50|0.05|21.00|1.05|5.25|22.05|6|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+37|7|37|37|37|2025-02-06|2025-02-08|7|10037|Sale of Mixed Dried Fruit to Global Sports Retailers|Carton|12|4.00|0.05|48.00|2.40|12.00|50.40|12|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+38|8|38|38|38|2025-02-07|2025-02-09|8|10038|Sale of Beef Jerky to National Sporting Goods|Carton|24|5.00|0.05|120.00|6.00|30.00|126.00|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+39|9|39|39|39|2025-02-08|2025-02-10|9|10039|Sale of Chicken Jerky to Outdoor Adventure Corp.|Carton|24|4.80|0.05|115.20|5.76|28.80|120.96|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+40|10|40|40|40|2025-02-09|2025-02-11|10|10040|Sale of Pork Crackling to Extreme Outdoors|Carton|24|3.50|0.05|84.00|4.20|21.00|88.20|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+41|1|41|41|41|2025-02-10|2025-02-12|1|10041|Sale of Salami Stick to Excellent Bike Works|Carton|24|4.20|0.05|100.80|5.04|25.20|105.84|24|0|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+42|2|42|42|42|2025-02-11|2025-02-13|2|10042|Sale of Beef Sausages to Rural Cycle Shop|Carton|12|6.00|0.05|72.00|3.60|18.00|75.60|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+43|3|43|43|43|2025-02-12|2025-02-14|3|10043|Sale of Chicken Sausages to Town Bikes|Carton|12|5.80|0.05|69.60|3.48|17.40|73.08|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+44|4|44|44|44|2025-02-13|2025-02-15|4|10044|Sale of Pork Sausages to Urban Wheels|Carton|12|5.50|0.05|66.00|3.30|16.50|69.30|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+45|5|45|45|45|2025-02-14|2025-02-16|5|10045|Sale of Bacon Rashers to Mountain Bikes Inc.|Carton|12|7.00|0.05|84.00|4.20|21.00|88.20|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+46|6|46|46|46|2025-02-15|2025-02-17|6|10046|Sale of Ham Sliced to City Cycle Center|Carton|12|6.50|0.05|78.00|3.90|19.50|81.90|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+47|7|47|47|47|2025-02-16|2025-02-18|7|10047|Sale of Chicken Breast Fillets to Global Sports Retailers|Carton|6|8.00|0.05|48.00|2.40|12.00|50.40|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+48|8|48|48|48|2025-02-17|2025-02-19|8|10048|Sale of Chicken Drumsticks to National Sporting Goods|Carton|6|7.50|0.05|45.00|2.25|11.25|47.25|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+49|9|49|49|49|2025-02-18|2025-02-20|9|10049|Sale of Chicken Thighs to Outdoor Adventure Corp.|Carton|6|7.80|0.05|46.80|2.34|11.70|49.14|0|6|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+50|10|50|50|50|2025-02-19|2025-02-21|10|10050|Sale of Beef Steak to Extreme Outdoors|Carton|12|12.00|0.05|144.00|7.20|36.00|151.20|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+51|1|51|51|51|2025-02-20|2025-02-22|1|10051|Sale of Beef Mince to Excellent Bike Works|Carton|12|9.50|0.05|114.00|5.70|28.50|119.70|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+52|2|52|52|52|2025-02-21|2025-02-23|2|10052|Sale of Pork Chops to Rural Cycle Shop|Carton|12|8.50|0.05|102.00|5.10|25.50|107.10|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+53|3|53|53|53|2025-02-22|2025-02-24|3|10053|Sale of Lamb Chops to Town Bikes|Carton|12|15.00|0.05|180.00|9.00|45.00|189.00|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+54|4|54|54|54|2025-02-23|2025-02-25|4|10054|Sale of Salmon Fillets to Urban Wheels|Carton|12|14.00|0.05|168.00|8.40|42.00|176.40|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+55|5|55|55|55|2025-02-24|2025-02-26|5|10055|Sale of Tuna Steaks to Mountain Bikes Inc.|Carton|12|13.50|0.05|162.00|8.10|40.50|170.10|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+56|6|56|56|56|2025-02-25|2025-02-27|6|10056|Sale of Cod Fillets to City Cycle Center|Carton|12|11.00|0.05|132.00|6.60|33.00|138.60|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+57|7|57|57|57|2025-02-26|2025-02-28|7|10057|Sale of Shrimp to Global Sports Retailers|Carton|12|16.00|0.05|192.00|9.60|48.00|201.60|0|12|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+58|8|58|58|58|2025-02-27|2025-03-01|8|10058|Sale of Eggs Free Range to National Sporting Goods|Carton|24|3.00|0.05|72.00|3.60|18.00|75.60|0|24|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+59|9|59|59|59|2025-02-28|2025-03-02|9|10059|Sale of Eggs Cage Free to Outdoor Adventure Corp.|Carton|24|3.20|0.05|76.80|3.84|19.20|80.64|0|24|1|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+60|10|60|60|60|2025-03-01|2025-03-03|10|10060|Sale of Tomatoes to Extreme Outdoors|Carton|12|2.50|0.05|30.00|1.50|7.50|31.50|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+61|1|61|61|61|2025-03-02|2025-03-04|1|10061|Sale of Lettuce Iceberg to Excellent Bike Works|Carton|24|1.80|0.05|43.20|2.16|10.80|45.36|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+62|2|62|62|62|2025-03-03|2025-03-05|2|10062|Sale of Potatoes to Rural Cycle Shop|Carton|12|1.50|0.05|18.00|0.90|4.50|18.90|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+63|3|63|63|63|2025-03-04|2025-03-06|3|10063|Sale of Onions to Town Bikes|Carton|12|1.60|0.05|19.20|0.96|4.80|20.16|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+64|4|64|64|64|2025-03-05|2025-03-07|4|10064|Sale of Carrots to Urban Wheels|Carton|12|1.70|0.05|20.40|1.02|5.10|21.42|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+65|5|65|65|65|2025-03-06|2025-03-08|5|10065|Sale of Cucumber to Mountain Bikes Inc.|Carton|24|1.20|0.05|28.80|1.44|7.20|30.24|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+66|6|66|66|66|2025-03-07|2025-03-09|6|10066|Sale of Broccoli to City Cycle Center|Carton|12|2.00|0.05|24.00|1.20|6.00|25.20|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+67|7|67|67|67|2025-03-08|2025-03-10|7|10067|Sale of Cauliflower to Global Sports Retailers|Carton|6|3.00|0.05|18.00|0.90|4.50|18.90|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+68|8|68|68|68|2025-03-09|2025-03-11|8|10068|Sale of Cabbage to National Sporting Goods|Carton|12|1.90|0.05|22.80|1.14|5.70|23.94|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+69|9|69|69|69|2025-03-10|2025-03-12|9|10069|Sale of Green Beans to Outdoor Adventure Corp.|Carton|24|1.50|0.05|36.00|1.80|9.00|37.80|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+70|10|70|70|70|2025-03-11|2025-03-13|10|10070|Sale of Mushrooms to Extreme Outdoors|Carton|12|2.80|0.05|33.60|1.68|8.40|35.28|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+71|1|71|71|71|2025-03-12|2025-03-14|1|10071|Sale of Apples to Excellent Bike Works|Carton|24|1.00|0.05|24.00|1.20|6.00|25.20|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+72|2|72|72|72|2025-03-13|2025-03-15|2|10072|Sale of Bananas to Rural Cycle Shop|Carton|48|0.50|0.05|24.00|1.20|6.00|25.20|0|0|48|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+73|3|73|73|73|2025-03-14|2025-03-16|3|10073|Sale of Oranges to Town Bikes|Carton|24|0.80|0.05|19.20|0.96|4.80|20.16|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+74|4|74|74|74|2025-03-15|2025-03-17|4|10074|Sale of Pears to Urban Wheels|Carton|12|1.20|0.05|14.40|0.72|3.60|15.12|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+75|5|75|75|75|2025-03-16|2025-03-18|5|10075|Sale of Grapes to Mountain Bikes Inc.|Carton|6|2.50|0.05|15.00|0.75|3.75|15.75|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+76|6|76|76|76|2025-03-17|2025-03-19|6|10076|Sale of Strawberries to City Cycle Center|Carton|12|2.00|0.05|24.00|1.20|6.00|25.20|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+77|7|77|77|77|2025-03-18|2025-03-20|7|10077|Sale of Blueberries to Global Sports Retailers|Carton|6|4.00|0.05|24.00|1.20|6.00|25.20|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+78|8|78|78|78|2025-03-19|2025-03-21|8|10078|Sale of Raspberries to National Sporting Goods|Carton|12|3.50|0.05|42.00|2.10|10.50|44.10|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+79|9|79|79|79|2025-03-20|2025-03-22|9|10079|Sale of Blackberries to Outdoor Adventure Corp.|Carton|24|2.20|0.05|52.80|2.64|13.20|55.44|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+80|10|80|80|80|2025-03-21|2025-03-23|10|10080|Sale of Cherries to Extreme Outdoors|Carton|12|4.50|0.05|54.00|2.70|13.50|56.70|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+81|1|81|81|81|2025-03-22|2025-03-24|1|10081|Sale of Peaches to Excellent Bike Works|Carton|24|1.80|0.05|43.20|2.16|10.80|45.36|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+82|2|82|82|82|2025-03-23|2025-03-25|2|10082|Sale of Plums to Rural Cycle Shop|Carton|12|2.00|0.05|24.00|1.20|6.00|25.20|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+83|3|83|83|83|2025-03-24|2025-03-26|3|10083|Sale of Kiwi Fruit to Town Bikes|Carton|6|3.00|0.05|18.00|0.90|4.50|18.90|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+84|4|84|84|84|2025-03-25|2025-03-27|4|10084|Sale of Mangoes to Urban Wheels|Carton|12|3.50|0.05|42.00|2.10|10.50|44.10|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+85|5|85|85|85|2025-03-26|2025-03-28|5|10085|Sale of Pineapples to Mountain Bikes Inc.|Carton|6|5.00|0.05|30.00|1.50|7.50|31.50|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+86|6|86|86|86|2025-03-27|2025-03-29|6|10086|Sale of Avocados to City Cycle Center|Carton|12|2.80|0.05|33.60|1.68|8.40|35.28|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+87|7|87|87|87|2025-03-28|2025-03-30|7|10087|Sale of Lemons to Global Sports Retailers|Carton|24|1.20|0.05|28.80|1.44|7.20|30.24|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+88|8|88|88|88|2025-03-29|2025-03-31|8|10088|Sale of Limes to National Sporting Goods|Carton|12|1.50|0.05|18.00|0.90|4.50|18.90|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+89|9|89|89|89|2025-03-30|2025-04-01|9|10089|Sale of Grapefruit to Outdoor Adventure Corp.|Carton|6|2.00|0.05|12.00|0.60|3.00|12.60|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+90|10|90|90|90|2025-03-31|2025-04-02|10|10090|Sale of Watermelon to Extreme Outdoors|Carton|12|1.70|0.05|20.40|1.02|5.10|21.42|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+91|1|91|91|91|2025-04-01|2025-04-03|1|10091|Sale of Cantaloupe to Excellent Bike Works|Carton|24|1.00|0.05|24.00|1.20|6.00|25.20|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+92|2|92|92|92|2025-04-02|2025-04-04|2|10092|Sale of Honeydew Melon to Rural Cycle Shop|Carton|12|1.30|0.05|15.60|0.78|3.90|16.38|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+93|3|93|93|93|2025-04-03|2025-04-05|3|10093|Sale of Asparagus to Town Bikes|Carton|6|3.50|0.05|21.00|1.05|5.25|22.05|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+94|4|94|94|94|2025-04-04|2025-04-06|4|10094|Sale of Spinach to Urban Wheels|Carton|12|2.00|0.05|24.00|1.20|6.00|25.20|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+95|5|95|95|95|2025-04-05|2025-04-07|5|10095|Sale of Kale to Mountain Bikes Inc.|Carton|24|1.50|0.05|36.00|1.80|9.00|37.80|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+96|6|96|96|96|2025-04-06|2025-04-08|6|10096|Sale of Sweetcorn to City Cycle Center|Carton|12|2.20|0.05|26.40|1.32|6.60|27.72|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+97|7|97|97|97|2025-04-07|2025-04-09|7|10097|Sale of Peas to Global Sports Retailers|Carton|6|4.00|0.05|24.00|1.20|6.00|25.20|0|0|6|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+98|8|98|98|98|2025-04-08|2025-04-10|8|10098|Sale of Beans Green to National Sporting Goods|Carton|12|3.00|0.05|36.00|1.80|9.00|37.80|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+99|9|99|99|99|2025-04-09|2025-04-11|9|10099|Sale of Peppers Red to Outdoor Adventure Corp.|Carton|24|1.80|0.05|43.20|2.16|10.80|45.36|0|0|24|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+100|10|100|100|100|2025-04-10|2025-04-12|10|10100|Sale of Peppers Yellow to Extreme Outdoors|Carton|12|2.50|0.05|30.00|1.50|7.50|31.50|0|0|12|sale_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV

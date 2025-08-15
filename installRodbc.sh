@@ -1,7 +1,13 @@
 #!/bin/bash
 # Databricks cluster-scoped init script to install unixODBC development files and R odbc package
 
-set -euxo pipefail  # Exit on error, print commands, handle errors in pipes
+set -euxo pipefail
+
+echo "==> Checking for R installation..."
+if ! command -v Rscript &> /dev/null; then
+    echo "Rscript not found. Please use a Databricks R runtime or install R manually."
+    exit 1
+fi
 
 echo "==> Updating package manager and installing unixODBC development libraries"
 if command -v apt-get &> /dev/null; then
@@ -15,10 +21,8 @@ else
 fi
 
 echo "==> Installing R packages: odbc and DBI from CRAN"
-Rscript -e "install.packages(c('odbc','DBI'), repos='https://cloud.r-project.org', dependencies=TRUE)"
-
-# Optional: Install a specific version
-# Rscript -e "install.packages('remotes', repos='https://cloud.r-project.org')"
-# Rscript -e "remotes::install_version('odbc', version = '1.3.2')"
+Rscript -e "options(repos = c(CRAN = 'https://cloud.r-project.org')); \
+            if (!requireNamespace('odbc', quietly = TRUE)) install.packages('odbc', dependencies=TRUE); \
+            if (!requireNamespace('DBI', quietly = TRUE)) install.packages('DBI', dependencies=TRUE)"
 
 echo "==> R ODBC setup completed successfully."

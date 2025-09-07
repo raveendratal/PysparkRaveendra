@@ -1,0 +1,101 @@
+WWI_Customer_ID|Customer|Bill_To_Customer|Category|Buying_Group|Primary_Contact|Postal_Code|Valid_From|Valid_To|Lineage_Key|filename|created_at|updated_at|source_type
+1|Excellent Bike Works|Excellent Bike Works|Retail|Independent Bikes|Laura Jones|48104|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+2|Rural Cycle Shop|Rural Cycle Shop|Retail|Independent Bikes|Peter Green|60007|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+3|Town Bikes|Town Bikes|Retail|Independent Bikes|Susan White|90210|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+4|Urban Wheels|Urban Wheels|Retail|Independent Bikes|David Brown|10001|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+5|Mountain Bikes Inc.|Mountain Bikes Inc.|Retail|Large Retailers|Karen Johnson|98052|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+6|City Cycle Center|City Cycle Center|Retail|Large Retailers|Michael Davis|02116|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+7|Global Sports Retailers|Global Sports Retailers|Retail|Large Retailers|Jennifer Wilson|30303|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+8|National Sporting Goods|National Sporting Goods|Retail|Large Retailers|Robert Garcia|60601|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+9|Outdoor Adventure Corp.|Outdoor Adventure Corp.|Retail|Outdoor Equipment|Linda Rodriguez|75001|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+10|Extreme Outdoors|Extreme Outdoors|Retail|Outdoor Equipment|Christopher Martinez|80202|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+11|Wilderness Gear|Wilderness Gear|Retail|Outdoor Equipment|Jessica Anderson|94102|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+12|Trek & Trail|Trek & Trail|Retail|Outdoor Equipment|Jason Thomas|20001|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+13|Bike World|Bike World|Retail|Specialty Retail|Angela Taylor|02215|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+14|Cycle Zone|Cycle Zone|Retail|Specialty Retail|Brandon Moore|19103|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+15|Pedal Power|Pedal Power|Retail|Specialty Retail|Ashley Jackson|33101|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+16|Wheel & Sprocket|Wheel & Sprocket|Retail|Specialty Retail|Matthew White|77002|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+17|Corporate Services Ltd.|Corporate Services Ltd.|Corporate|Business Services|Samantha Green|48105|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+18|Office Solutions Inc.|Office Solutions Inc.|Corporate|Business Services|Kevin Davis|60008|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+19|Professional Consulting Group|Professional Consulting Group|Corporate|Business Services|Laura Wilson|90211|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+20|Tech Forward|Tech Forward|Corporate|Technology Companies|Robert Johnson|10002|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+21|Innovate Systems|Innovate Systems|Corporate|Technology Companies|Jennifer Garcia|98053|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+22|Global Solutions Ltd.|Global Solutions Ltd.|Corporate|Technology Companies|Michael Rodriguez|02117|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+23|Data Insights Corp.|Data Insights Corp.|Corporate|Technology Companies|Susan Martinez|30304|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+24|Info Systems Inc.|Info Systems Inc.|Corporate|Technology Companies|David Anderson|60602|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+25|United Importers|United Importers|Wholesale|Importer|Karen Thomas|75002|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+26|Worldwide Trading Co.|Worldwide Trading Co.|Wholesale|Importer|Christopher Taylor|80203|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+27|International Distribution|International Distribution|Wholesale|Importer|Jessica Moore|94103|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+28|Global Commerce Group|Global Commerce Group|Wholesale|Importer|Jason Jackson|20002|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+29|Overseas Supply Chain|Overseas Supply Chain|Wholesale|Importer|Ashley White|02216|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+30|Prime Logistics|Prime Logistics|Wholesale|Logistics|Matthew Green|19104|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+31|Rapid Transit Inc.|Rapid Transit Inc.|Wholesale|Logistics|Samantha Davis|33102|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+32|Speedy Delivery Services|Speedy Delivery Services|Wholesale|Logistics|Kevin Wilson|77003|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+33|Velocity Transport|Velocity Transport|Wholesale|Logistics|Linda Garcia|48106|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+34|Expedited Shipping|Expedited Shipping|Wholesale|Logistics|Robert Rodriguez|60009|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+35|Apex Manufacturing|Apex Manufacturing|Manufacturing|Industrial|Christopher Martinez|90212|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+36|Precision Industries|Precision Industries|Manufacturing|Industrial|Jessica Anderson|10003|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+37|Summit Production|Summit Production|Manufacturing|Industrial|Jason Thomas|98054|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+38|Vanguard Assembly|Vanguard Assembly|Manufacturing|Industrial|Angela Taylor|02217|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+39|Zenith Components|Zenith Components|Manufacturing|Industrial|Brandon Moore|19105|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+40|Acme Corp|Acme Corp|Corporate|Technology Companies|Ashley Jackson|33103|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+41|Beta Systems|Beta Systems|Corporate|Technology Companies|Matthew White|77004|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+42|Gamma Solutions|Gamma Solutions|Corporate|Technology Companies|Samantha Green|48107|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+43|Delta Innovations|Delta Innovations|Corporate|Technology Companies|Kevin Davis|60010|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+44|Epsilon Enterprises|Epsilon Enterprises|Corporate|Technology Companies|Linda Wilson|90213|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+45|Zeta Group|Zeta Group|Corporate|Finance|Robert Garcia|10004|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+46|Eta Holdings|Eta Holdings|Corporate|Finance|Christopher Rodriguez|98055|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+47|Theta Investments|Theta Investments|Corporate|Finance|Jessica Martinez|02118|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+48|Iota Capital|Iota Capital|Corporate|Finance|Jason Anderson|30305|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+49|Kappa Financial|Kappa Financial|Corporate|Finance|Ashley Taylor|60603|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+50|Lambda Enterprises|Lambda Enterprises|Corporate|Retail|Matthew Moore|75003|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+51|Mu Retail Group|Mu Retail Group|Corporate|Retail|Samantha Jackson|80204|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+52|Nu Stores Inc.|Nu Stores Inc.|Corporate|Retail|Kevin White|94104|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+53|Xi Retail Chain|Xi Retail Chain|Corporate|Retail|Linda Green|20003|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+54|Omicron Retailers|Omicron Retailers|Corporate|Retail|Robert Davis|02218|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+55|Pi Wholesalers|Pi Wholesalers|Wholesale|Food Distributor|Christopher Wilson|19106|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+56|Rho Food Services|Rho Food Services|Wholesale|Food Distributor|Jessica Garcia|33104|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+57|Sigma Food Supply|Sigma Food Supply|Wholesale|Food Distributor|Jason Rodriguez|77005|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+58|Tau Distribution|Tau Distribution|Wholesale|Food Distributor|Ashley Martinez|48108|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+59|Upsilon Logistics|Upsilon Logistics|Wholesale|Logistics|Matthew Anderson|60011|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+60|Phi Transport|Phi Transport|Wholesale|Logistics|Samantha Taylor|90214|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+61|Chi Delivery|Chi Delivery|Wholesale|Logistics|Kevin Moore|10005|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+62|Psi Shipping|Psi Shipping|Wholesale|Logistics|Linda Jackson|98056|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+63|Omega Express|Omega Express|Wholesale|Logistics|Robert White|02119|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+64|Alpha Manufacturing Co.|Alpha Manufacturing Co.|Manufacturing|Electronics|Christopher Green|30306|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+65|Bravo Electronics|Bravo Electronics|Manufacturing|Electronics|Jessica Davis|60604|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+66|Charlie Tech|Charlie Tech|Manufacturing|Electronics|Jason Wilson|75004|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+67|Delta Devices|Delta Devices|Manufacturing|Electronics|Ashley Garcia|80205|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+68|Echo Components|Echo Components|Manufacturing|Electronics|Matthew Rodriguez|94105|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+69|Foxtrot Industries|Foxtrot Industries|Manufacturing|Automotive|Samantha Martinez|20004|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+70|Golf Motors|Golf Motors|Manufacturing|Automotive|Kevin Anderson|02219|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+71|Hotel Auto Parts|Hotel Auto Parts|Manufacturing|Automotive|Linda Taylor|19107|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+72|India Vehicle Solutions|India Vehicle Solutions|Manufacturing|Automotive|Robert Moore|33105|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+73|Juliet Car Components|Juliet Car Components|Manufacturing|Automotive|Christopher Jackson|77006|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+74|Kilo Machinery|Kilo Machinery|Manufacturing|Heavy Industry|Jessica White|48109|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+75|Lima Industrial|Lima Industrial|Manufacturing|Heavy Industry|Jason Green|60012|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+76|Mike Equipment|Mike Equipment|Manufacturing|Heavy Industry|Ashley Davis|90215|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+77|November Tools|November Tools|Manufacturing|Heavy Industry|Matthew Wilson|10006|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+78|Oscar Supplies|Oscar Supplies|Manufacturing|Heavy Industry|Samantha Garcia|98057|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+79|Papa Materials|Papa Materials|Manufacturing|Construction|Kevin Rodriguez|02120|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+80|Quebec Building Inc.|Quebec Building Inc.|Manufacturing|Construction|Linda Martinez|19108|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+81|Romeo Construction Ltd.|Romeo Construction Ltd.|Manufacturing|Construction|Robert Anderson|33106|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+82|Sierra Builders|Sierra Builders|Manufacturing|Construction|Christopher Taylor|77007|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+83|Tango Structures|Tango Structures|Manufacturing|Construction|Jessica Moore|48110|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+84|Uniform Design Co.|Uniform Design Co.|Manufacturing|Textiles|Jason Jackson|60013|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+85|Victor Textiles Ltd.|Victor Textiles Ltd.|Manufacturing|Textiles|Ashley White|90216|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+86|Whiskey Apparel|Whiskey Apparel|Manufacturing|Textiles|Matthew Green|10007|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+87|X-ray Clothing Inc.|X-ray Clothing Inc.|Manufacturing|Textiles|Samantha Davis|98058|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+88|Yankee Fashion|Yankee Fashion|Manufacturing|Textiles|Kevin Wilson|02121|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+89|Zulu Garments|Zulu Garments|Manufacturing|Textiles|Linda Garcia|19109|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+90|Awesome Gadgets|Awesome Gadgets|Retail|Electronics Retailer|Robert Rodriguez|33107|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+91|Brilliant Electronics|Brilliant Electronics|Retail|Electronics Retailer|Christopher Martinez|77008|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+92|Cool Tech Store|Cool Tech Store|Retail|Electronics Retailer|Jessica Anderson|48111|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+93|Digital Emporium|Digital Emporium|Retail|Electronics Retailer|Jason Thomas|60014|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+94|Elite Electronics|Elite Electronics|Retail|Electronics Retailer|Angela Taylor|90217|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+95|First Rate Restaurants|First Rate Restaurants|Retail|Restaurant Chain|Brandon Moore|10008|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+96|Gourmet Grub Inc.|Gourmet Grub Inc.|Retail|Restaurant Chain|Ashley Jackson|98059|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+97|Fine Dining Group|Fine Dining Group|Retail|Restaurant Chain|Matthew White|02122|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+98|Premium Eats Corp.|Premium Eats Corp.|Retail|Restaurant Chain|Samantha Green|19110|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+99|Superior Cuisine|Superior Cuisine|Retail|Restaurant Chain|Kevin Davis|33108|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+100|The Coffee Chain|The Coffee Chain|Retail|Coffee Shop|Linda Wilson|77009|2023-01-01|9999-12-31|1|customer_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV

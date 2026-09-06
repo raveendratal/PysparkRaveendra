@@ -1,0 +1,101 @@
+WWI_City_ID|City|State_Province|Country|Continent|Sales_Territory|Region|Subregion|Location|Latest_Recorded_Population|Valid_From|Valid_To|Lineage_Key|filename|created_at|updated_at|source_type
+1|London|England|United Kingdom|Europe|EMEA|British Isles|Greater London|51.5074° N, 0.1278° W|8982000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+2|Paris|Île-de-France|France|Europe|EMEA|Western Europe|Île-de-France|48.8566° N, 2.3522° E|2141000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+3|Tokyo|Tokyo|Japan|Asia|APAC|Japan|Kanto|35.6895° N, 139.6917° E|13960000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+4|New York City|New York|United States|North America|NA|Northeast|Mid-Atlantic|40.7128° N, 74.0060° W|8804000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+5|Sydney|New South Wales|Australia|Australia|APAC|Australia|New South Wales|-33.8688° S, 151.2093° E|5312000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+6|Berlin|Berlin|Germany|Europe|EMEA|Central Europe|Berlin|52.5200° N, 13.4050° E|3671000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+7|Rome|Lazio|Italy|Europe|EMEA|Southern Europe|Lazio|41.9028° N, 12.4964° E|2860000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+8|Madrid|Madrid|Spain|Europe|EMEA|Southern Europe|Madrid|40.4168° N, 3.7038° W|3223000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+9|Toronto|Ontario|Canada|North America|NA|Canada|Ontario|43.6532° N, 79.3832° W|2930000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+10|Dubai|Dubai|United Arab Emirates|Asia|APAC|Middle East|Dubai|25.2048° N, 55.2708° E|3137000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+11|Mumbai|Maharashtra|India|Asia|APAC|India|Maharashtra|19.0760° N, 72.8777° E|20670000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+12|Sao Paulo|Sao Paulo|Brazil|South America|LATAM|Brazil|Sao Paulo|-23.5505° S, 46.6333° W|12330000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+13|Moscow|Moscow|Russia|Europe|EMEA|Eastern Europe|Moscow|55.7558° N, 37.6173° E|13010000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+14|Seoul|Seoul|South Korea|Asia|APAC|South Korea|Seoul|37.5665° N, 126.9780° E|9904000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+15|Mexico City|Mexico City|Mexico|North America|LATAM|Mexico|Mexico City|19.4326° N, 99.1332° W|9209000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+16|Shanghai|Shanghai|China|Asia|APAC|China|Shanghai|31.2304° N, 121.4737° E|26320000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+17|Beijing|Beijing|China|Asia|APAC|China|Beijing|39.9042° N, 116.4074° E|21540000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+18|Cairo|Cairo|Egypt|Africa|EMEA|North Africa|Cairo|30.0444° N, 31.2357° E|9845000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+19|Istanbul|Istanbul|Turkey|Europe|EMEA|Turkey|Istanbul|41.0082° N, 28.9784° E|15460000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+20|Jakarta|Jakarta|Indonesia|Asia|APAC|Southeast Asia|Jakarta|-6.2088° S, 106.8456° E|10770000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+21|Bangalore|Karnataka|India|Asia|APAC|India|Karnataka|12.9716° N, 77.5946° E|12340000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+22|Chennai|Tamil Nadu|India|Asia|APAC|India|Tamil Nadu|13.0827° N, 80.2707° E|11890000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+23|Kolkata|West Bengal|India|Asia|APAC|India|West Bengal|22.5726° N, 88.3639° E|15140000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+24|Delhi|Delhi|India|Asia|APAC|India|Delhi|28.7041° N, 77.1025° E|31000000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+25|Hyderabad|Telangana|India|Asia|APAC|India|Telangana|17.3850° N, 78.4867° E|10080000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+26|Ahmedabad|Gujarat|India|Asia|APAC|India|Gujarat|23.0225° N, 72.5714° E|8253000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+27|Pune|Maharashtra|India|Asia|APAC|India|Maharashtra|18.5204° N, 73.8567° E|7400000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+28|Surat|Gujarat|India|Asia|APAC|India|Gujarat|21.1702° N, 72.8311° E|6564000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+29|Jaipur|Rajasthan|India|Asia|APAC|India|Rajasthan|26.9124° N, 75.7873° E|4000000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+30|Lucknow|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|26.8467° N, 80.9462° E|3859000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+31|Kanpur|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|26.4499° N, 80.3319° E|3000000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+32|Nagpur|Maharashtra|India|Asia|APAC|India|Maharashtra|21.1458° N, 79.0882° E|2405000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+33|Visakhapatnam|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|17.6868° N, 83.2185° E|2036000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+34|Bhopal|Madhya Pradesh|India|Asia|APAC|India|Madhya Pradesh|23.2599° N, 77.4126° E|1886000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+35|Patna|Bihar|India|Asia|APAC|India|Bihar|25.5941° N, 85.1376° E|1680000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+36|Ludhiana|Punjab|India|Asia|APAC|India|Punjab|30.9010° N, 75.8573° E|1618000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+37|Agra|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|27.1767° N, 78.0081° E|1586000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+38|Nashik|Maharashtra|India|Asia|APAC|India|Maharashtra|19.9975° N, 73.7898° E|1486000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+39|Vadodara|Gujarat|India|Asia|APAC|India|Gujarat|22.3072° N, 73.1812° E|1817000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+40|Varanasi|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|25.3176° N, 82.9739° E|1201000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+41|Srinagar|Jammu and Kashmir|India|Asia|APAC|India|Jammu and Kashmir|34.0837° N, 74.7973° E|1225000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+42|Aurangabad|Maharashtra|India|Asia|APAC|India|Maharashtra|19.8762° N, 75.3433° E|1175000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+43|Rajkot|Gujarat|India|Asia|APAC|India|Gujarat|22.2587° N, 70.8022° E|1800000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+44|Coimbatore|Tamil Nadu|India|Asia|APAC|India|Tamil Nadu|11.0168° N, 76.9558° E|1601000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+45|Jabalpur|Madhya Pradesh|India|Asia|APAC|India|Madhya Pradesh|23.1795° N, 79.9598° E|1200000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+46|Gwalior|Madhya Pradesh|India|Asia|APAC|India|Madhya Pradesh|26.2183° N, 78.1828° E|1101000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+47|Vijayawada|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|16.5062° N, 80.6480° E|1034000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+48|Madurai|Tamil Nadu|India|Asia|APAC|India|Tamil Nadu|9.9252° N, 78.1198° E|1470000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+49|Raipur|Chhattisgarh|India|Asia|APAC|India|Chhattisgarh|21.2514° N, 81.6296° E|1070000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+50|Kota|Rajasthan|India|Asia|APAC|India|Rajasthan|25.2138° N, 75.8583° E|1001000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+51|Chandigarh|Chandigarh|India|Asia|APAC|India|Chandigarh|30.7333° N, 76.7794° E|1026000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+52|Guwahati|Assam|India|Asia|APAC|India|Assam|26.1445° N, 91.7362° E|1117000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+53|Solapur|Maharashtra|India|Asia|APAC|India|Maharashtra|17.6874° N, 75.9078° E|973000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+54|Hubli-Dharwad|Karnataka|India|Asia|APAC|India|Karnataka|15.3647° N, 75.1240° E|946000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+55|Bareilly|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|28.3500° N, 79.4166° E|898000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+56|Mysore|Karnataka|India|Asia|APAC|India|Karnataka|12.2958° N, 76.6394° E|920000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+57|Jodhpur|Rajasthan|India|Asia|APAC|India|Rajasthan|26.2389° N, 73.0243° E|1137000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+58|Gorakhpur|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|26.7606° N, 83.3732° E|700000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+59|Aligarh|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|27.9085° N, 78.0844° E|911000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+60|Thrissur|Kerala|India|Asia|APAC|India|Kerala|10.5277° N, 76.2144° E|315000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+61|Saharanpur|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|29.9644° N, 77.5525° E|703000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+62|Bikaner|Rajasthan|India|Asia|APAC|India|Rajasthan|28.0147° N, 73.3149° E|760000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+63|Amritsar|Punjab|India|Asia|APAC|India|Punjab|31.6340° N, 74.8723° E|1133000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+64|Bhubaneswar|Odisha|India|Asia|APAC|India|Odisha|20.2961° N, 85.8245° E|886000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+65|Kochi|Kerala|India|Asia|APAC|India|Kerala|9.9312° N, 76.2604° E|677000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+66|Cuttack|Odisha|India|Asia|APAC|India|Odisha|20.4608° N, 85.8847° E|702000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+67|Ranchi|Jharkhand|India|Asia|APAC|India|Jharkhand|23.3424° N, 85.3083° E|1120000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+68|Vijayapura|Karnataka|India|Asia|APAC|India|Karnataka|16.8345° N, 75.7148° E|327000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+69|Kolhapur|Maharashtra|India|Asia|APAC|India|Maharashtra|16.7050° N, 74.2433° E|561000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+70|Ajmer|Rajasthan|India|Asia|APAC|India|Rajasthan|26.4499° N, 74.6399° E|551000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+71|Dhanbad|Jharkhand|India|Asia|APAC|India|Jharkhand|23.7955° N, 86.4483° E|1162000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+72|Allahabad|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|25.4358° N, 81.8463° E|1216000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+73|Guntur|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|16.3070° N, 80.4370° E|670000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+74|Jalandhar|Punjab|India|Asia|APAC|India|Punjab|31.3260° N, 75.5762° E|862000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+75|Jamnagar|Gujarat|India|Asia|APAC|India|Gujarat|22.4707° N, 70.0577° E|600000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+76|Belgaum|Karnataka|India|Asia|APAC|India|Karnataka|15.8493° N, 74.5018° E|489000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+77|Amravati|Maharashtra|India|Asia|APAC|India|Maharashtra|20.9374° N, 77.7797° E|647000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+78|Nellore|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|14.4426° N, 79.9713° E|600000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+79|Mangalore|Karnataka|India|Asia|APAC|India|Karnataka|12.9141° N, 74.8560° E|619000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+80|Erode|Tamil Nadu|India|Asia|APAC|India|Tamil Nadu|11.3409° N, 77.7172° E|521000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+81| आसनসোল |West Bengal|India|Asia|APAC|India|West Bengal|23.6834° N, 86.9884° E|563000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+82|Gaya|Bihar|India|Asia|APAC|India|Bihar|24.7955° N, 85.0002° E|470000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+83|Tirupati|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|13.6288° N, 79.4192° E|459000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+84|Ujjain|Madhya Pradesh|India|Asia|APAC|India|Madhya Pradesh|23.1795° N, 75.7719° E|515000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+85|Jhansi|Uttar Pradesh|India|Asia|APAC|India|Uttar Pradesh|25.4484° N, 78.5725° E|505000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+86|Puri|Odisha|India|Asia|APAC|India|Odisha|19.8135° N, 85.8312° E|200000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+87|Akola|Maharashtra|India|Asia|APAC|India|Maharashtra|20.7000° N, 77.0000° E|427000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+88|Gulbarga|Karnataka|India|Asia|APAC|India|Karnataka|17.3333° N, 76.8333° E|428000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+89|Kurnool|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|15.8293° N, 78.0372° E|484000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+90|Bhavnagar|Gujarat|India|Asia|APAC|India|Gujarat|21.7653° N, 72.1505° E|643000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+91|Siliguri|West Bengal|India|Asia|APAC|India|West Bengal|26.7241° N, 88.3938° E|701000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+92|Warangal|Telangana|India|Asia|APAC|India|Telangana|17.9689° N, 79.5941° E|759000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+93|Thanjavur|Tamil Nadu|India|Asia|APAC|India|Tamil Nadu|10.7984° N, 79.1348° E|292000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+94|Rajahmundry|Andhra Pradesh|India|Asia|APAC|India|Andhra Pradesh|16.9915° N, 81.7793° E|476000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+95|Durgapur|West Bengal|India|Asia|APAC|India|West Bengal|23.5500° N, 87.3167° E|566000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+96|Imphal|Manipur|India|Asia|APAC|India|Manipur|24.8170° N, 93.9368° E|268000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+97|Hospet|Karnataka|India|Asia|APAC|India|Karnataka|15.2770° N, 76.3943° E|210000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+98|Dehradun|Uttarakhand|India|Asia|APAC|India|Uttarakhand|30.3165° N, 78.0322° E|714000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+99|Gaya|Bihar|India|Asia|APAC|India|Bihar|24.7955° N, 85.0002° E|470000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
+100|Thiruvananthapuram|Kerala|India|Asia|APAC|India|Kerala|8.5241° N, 76.9366° E|744000|2023-01-01|9999-12-31|1|city_bronze.csv|2025-02-07 18:48:57|2025-02-07 18:48:57|CSV
